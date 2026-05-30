@@ -57,27 +57,63 @@ export default async function HomePage() {
             </div>
 
             <div className="relative">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-gray-800 to-gray-950 shadow-2xl sm:aspect-square">
+              <div className="relative min-h-[420px] overflow-hidden rounded-2xl border border-white/10 bg-[#0b0f17] shadow-2xl sm:min-h-[520px]">
                 <Image
                   src="/images/Hero.png"
                   alt="Digital dashboard visual for Hicham Mahboub portfolio"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
+                  className="object-cover opacity-55"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 sm:p-7">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/60">
-                      Portfolio
-                    </p>
-                    <p className="mt-2 max-w-xs text-sm leading-6 text-white/85">
-                      Full-stack, dashboards, APIs, and digital transformation projects.
-                    </p>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(34,211,238,0.22),transparent_28%),linear-gradient(135deg,rgba(2,6,23,0.92),rgba(15,23,42,0.48)_48%,rgba(0,0,0,0.86))]" />
+
+                <div className="absolute inset-0 grid grid-rows-[auto_1fr_auto] gap-5 p-5 sm:p-7">
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-medium text-white/80 backdrop-blur">
+                      Internship portfolio
+                    </div>
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-sm font-semibold text-cyan-100 backdrop-blur">
+                      HM
+                    </div>
                   </div>
-                  <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-black/45 text-2xl font-semibold tracking-tight text-white shadow-2xl backdrop-blur sm:h-24 sm:w-24 sm:text-3xl">
-                    HM
+
+                  <div className="grid content-center gap-4">
+                    <div className="max-w-sm rounded-2xl border border-white/10 bg-black/45 p-5 shadow-2xl backdrop-blur-md">
+                      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200/80">
+                        Developer workspace
+                      </p>
+                      <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+                        Full-stack systems, dashboards, and APIs.
+                      </h2>
+                      <div className="mt-5 grid gap-3">
+                        <div className="flex items-center justify-between rounded-xl bg-white/10 px-3 py-2 text-sm text-white/80">
+                          <span>Backend APIs</span>
+                          <span className="text-cyan-200">REST</span>
+                        </div>
+                        <div className="flex items-center justify-between rounded-xl bg-white/10 px-3 py-2 text-sm text-white/80">
+                          <span>Dashboards</span>
+                          <span className="text-emerald-200">Analytics</span>
+                        </div>
+                        <div className="flex items-center justify-between rounded-xl bg-white/10 px-3 py-2 text-sm text-white/80">
+                          <span>Digital transformation</span>
+                          <span className="text-indigo-200">Workflows</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-3 text-center">
+                    {[
+                      ["6", "Projects"],
+                      ["API", "Backend"],
+                      ["UI", "Dashboards"],
+                    ].map(([value, label]) => (
+                      <div key={label} className="rounded-2xl border border-white/10 bg-white/10 px-3 py-4 backdrop-blur">
+                        <p className="text-lg font-semibold text-white">{value}</p>
+                        <p className="mt-1 text-[11px] uppercase tracking-[0.18em] text-white/55">{label}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

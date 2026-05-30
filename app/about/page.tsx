@@ -52,7 +52,7 @@ export default function AboutPage() {
             <section className="px-4 pb-24 sm:px-6 lg:px-8">
                 <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.92fr,1.08fr] lg:items-start">
                     <Card className="overflow-hidden border-gray-200 bg-white p-4 shadow-sm dark:border-gray-800 dark:bg-gray-900">
-                        <div className="relative aspect-square overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-black via-gray-900 to-accent-600 text-white">
+                        <div className="relative aspect-square overflow-hidden rounded-[1.5rem] bg-gray-950 text-white">
                             <Image
                                 src="/images/My-pdp.png"
                                 alt="Hicham Mahboub profile photo"
@@ -61,6 +61,14 @@ export default function AboutPage() {
                                 sizes="(max-width: 1024px) 100vw, 42vw"
                                 className="object-cover"
                             />
+                            <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/10 bg-black/55 p-4 backdrop-blur-md">
+                                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/55">
+                                    Hicham Mahboub
+                                </p>
+                                <p className="mt-1 text-sm font-medium text-white">
+                                    Full-stack internship candidate
+                                </p>
+                            </div>
                         </div>
                     </Card>
 
@@ -93,12 +101,10 @@ export default function AboutPage() {
                                     <CardTitle className="text-3xl">6</CardTitle>
                                 </CardHeader>
                             </Card>
-                            <Card className="bg-gray-950 text-white dark:bg-white dark:text-gray-950">
+                            <Card>
                                 <CardHeader className="pb-3">
-                                    <CardDescription className="text-white/60 dark:text-gray-600">
-                                        Focus
-                                    </CardDescription>
-                                    <CardTitle className="text-3xl">IS & DX</CardTitle>
+                                    <CardDescription>Track</CardDescription>
+                                    <CardTitle className="text-2xl">Digital Transformation</CardTitle>
                                 </CardHeader>
                             </Card>
                         </div>
