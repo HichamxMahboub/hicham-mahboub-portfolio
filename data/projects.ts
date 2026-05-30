@@ -18,7 +18,7 @@ export const projects: ProjectItem[] = [
     category: "Full-Stack Platforms",
     themeKey: "slate",
     bgColor: "bg-slate-950",
-    imageSrc: "/images/Futuristic recruitment and analytics dashboard.png",
+    imageSrc: "/images/projects/smart-match.png",
     imageAlt: "Smart Match recruitment analytics dashboard",
     description:
       "Smart Match is an academic full-stack platform designed around internship and freelance matching. It shows how I think through roles, data models, API boundaries, and recruiter/candidate workflows.",
@@ -46,7 +46,7 @@ export const projects: ProjectItem[] = [
       "Firebase Auth",
       "Swagger",
     ],
-    screenshots: ["/images/Futuristic recruitment and analytics dashboard.png"],
+    screenshots: ["/images/projects/smart-match.png"],
   },
   {
     id: 2,
@@ -57,7 +57,7 @@ export const projects: ProjectItem[] = [
     category: "Full-Stack Platforms",
     themeKey: "neutral",
     bgColor: "bg-neutral-950",
-    imageSrc: "/images/Futuristic e-commerce dashboard interface.png",
+    imageSrc: "/images/projects/markethub.png",
     imageAlt: "MarketHub marketplace dashboard",
     description:
       "MarketHub is a multi-vendor marketplace project focused on the operational logic behind sellers, products, customers, orders, payments, and moderation.",
@@ -85,7 +85,7 @@ export const projects: ProjectItem[] = [
       "REST APIs",
       "Admin Dashboard",
     ],
-    screenshots: ["/images/Futuristic e-commerce dashboard interface.png"],
+    screenshots: ["/images/projects/markethub.png"],
   },
   {
     id: 3,
@@ -96,7 +96,7 @@ export const projects: ProjectItem[] = [
     category: "Dashboards & Analytics",
     themeKey: "blue",
     bgColor: "bg-blue-950",
-    imageSrc: "/images/Competency analytics dashboard UI design.png",
+    imageSrc: "/images/projects/competency-analytics-assistant.png",
     imageAlt: "Competency analytics dashboard",
     description:
       "Competency Analytics Assistant is a bilingual FR/AR analytics tool for teachers who work with structured Excel files and need faster evaluation summaries.",
@@ -124,7 +124,7 @@ export const projects: ProjectItem[] = [
       "i18n",
       "Local Storage",
     ],
-    screenshots: ["/images/Competency analytics dashboard UI design.png"],
+    screenshots: ["/images/projects/competency-analytics-assistant.png"],
   },
   {
     id: 4,
@@ -135,7 +135,7 @@ export const projects: ProjectItem[] = [
     category: "Dashboards & Analytics",
     themeKey: "slate",
     bgColor: "bg-gray-950",
-    imageSrc: "/images/Social media command centre dashboard.png",
+    imageSrc: "/images/projects/social-media-command-center.png",
     imageAlt: "Social media command centre dashboard",
     description:
       "Social Media Command Center is a dashboard-focused project for organizing content operations across multiple channels and campaign states.",
@@ -162,7 +162,7 @@ export const projects: ProjectItem[] = [
       "Charts",
       "Workflow Design",
     ],
-    screenshots: ["/images/Social media command centre dashboard.png"],
+    screenshots: ["/images/projects/social-media-command-center.png"],
   },
   {
     id: 5,
@@ -173,7 +173,7 @@ export const projects: ProjectItem[] = [
     category: "Digital Tools",
     themeKey: "neutral",
     bgColor: "bg-zinc-950",
-    imageSrc: "/images/Freelance management dashboard overview.png",
+    imageSrc: "/images/projects/freelance-manager.png",
     imageAlt: "Freelance management dashboard",
     description:
       "Freelance Manager is a practical management tool for independent work, built around the daily needs of tracking missions, clients, deliverables, and payments.",
@@ -200,7 +200,7 @@ export const projects: ProjectItem[] = [
       "CRUD",
       "Dashboard Design",
     ],
-    screenshots: ["/images/Freelance management dashboard overview.png"],
+    screenshots: ["/images/projects/freelance-manager.png"],
   },
   {
     id: 6,
@@ -211,7 +211,7 @@ export const projects: ProjectItem[] = [
     category: "Web Interfaces",
     themeKey: "blue",
     bgColor: "bg-indigo-950",
-    imageSrc: "/images/Futuristic Nova AI assistant dashboard.png",
+    imageSrc: "/images/projects/nova-ai-landing-page.png",
     imageAlt: "Nova AI assistant landing page",
     description:
       "Nova AI Landing Page is a front-end project focused on building a polished, responsive product page for an AI-themed software offer.",
@@ -237,6 +237,6 @@ export const projects: ProjectItem[] = [
       "Responsive Design",
       "UI Components",
     ],
-    screenshots: ["/images/Futuristic Nova AI assistant dashboard.png"],
+    screenshots: ["/images/projects/nova-ai-landing-page.png"],
   },
 ];
