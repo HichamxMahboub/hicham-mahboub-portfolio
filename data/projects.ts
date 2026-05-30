@@ -18,8 +18,8 @@ export const projects: ProjectItem[] = [
     category: "Full-Stack Platforms",
     themeKey: "slate",
     bgColor: "bg-slate-950",
-    imageSrc: "/images/laptop-mockup-1.svg",
-    imageAlt: "Smart Match platform mockup",
+    imageSrc: "/images/Futuristic recruitment and analytics dashboard.png",
+    imageAlt: "Smart Match recruitment analytics dashboard",
     description:
       "Smart Match is an academic full-stack platform designed around internship and freelance matching. It shows how I think through roles, data models, API boundaries, and recruiter/candidate workflows.",
     problem:
@@ -46,7 +46,7 @@ export const projects: ProjectItem[] = [
       "Firebase Auth",
       "Swagger",
     ],
-    screenshots: ["/images/laptop-mockup-1.svg"],
+    screenshots: ["/images/Futuristic recruitment and analytics dashboard.png"],
   },
   {
     id: 2,
@@ -57,8 +57,8 @@ export const projects: ProjectItem[] = [
     category: "Full-Stack Platforms",
     themeKey: "neutral",
     bgColor: "bg-neutral-950",
-    imageSrc: "/images/laptop-mockup-2.svg",
-    imageAlt: "MarketHub marketplace mockup",
+    imageSrc: "/images/Futuristic e-commerce dashboard interface.png",
+    imageAlt: "MarketHub marketplace dashboard",
     description:
       "MarketHub is a multi-vendor marketplace project focused on the operational logic behind sellers, products, customers, orders, payments, and moderation.",
     problem:
@@ -85,7 +85,7 @@ export const projects: ProjectItem[] = [
       "REST APIs",
       "Admin Dashboard",
     ],
-    screenshots: ["/images/laptop-mockup-2.svg"],
+    screenshots: ["/images/Futuristic e-commerce dashboard interface.png"],
   },
   {
     id: 3,
@@ -96,8 +96,8 @@ export const projects: ProjectItem[] = [
     category: "Dashboards & Analytics",
     themeKey: "blue",
     bgColor: "bg-blue-950",
-    imageSrc: "/images/laptop-mockup-3.svg",
-    imageAlt: "Competency analytics assistant mockup",
+    imageSrc: "/images/Competency analytics dashboard UI design.png",
+    imageAlt: "Competency analytics dashboard",
     description:
       "Competency Analytics Assistant is a bilingual FR/AR analytics tool for teachers who work with structured Excel files and need faster evaluation summaries.",
     problem:
@@ -124,7 +124,7 @@ export const projects: ProjectItem[] = [
       "i18n",
       "Local Storage",
     ],
-    screenshots: ["/images/laptop-mockup-3.svg"],
+    screenshots: ["/images/Competency analytics dashboard UI design.png"],
   },
   {
     id: 4,
@@ -135,8 +135,8 @@ export const projects: ProjectItem[] = [
     category: "Dashboards & Analytics",
     themeKey: "slate",
     bgColor: "bg-gray-950",
-    imageSrc: "/images/laptop-mockup-1.svg",
-    imageAlt: "Social media command center dashboard mockup",
+    imageSrc: "/images/Social media command centre dashboard.png",
+    imageAlt: "Social media command centre dashboard",
     description:
       "Social Media Command Center is a dashboard-focused project for organizing content operations across multiple channels and campaign states.",
     problem:
@@ -162,7 +162,7 @@ export const projects: ProjectItem[] = [
       "Charts",
       "Workflow Design",
     ],
-    screenshots: ["/images/laptop-mockup-1.svg"],
+    screenshots: ["/images/Social media command centre dashboard.png"],
   },
   {
     id: 5,
@@ -173,8 +173,8 @@ export const projects: ProjectItem[] = [
     category: "Digital Tools",
     themeKey: "neutral",
     bgColor: "bg-zinc-950",
-    imageSrc: "/images/laptop-mockup-2.svg",
-    imageAlt: "Freelance Manager workspace mockup",
+    imageSrc: "/images/Freelance management dashboard overview.png",
+    imageAlt: "Freelance management dashboard",
     description:
       "Freelance Manager is a practical management tool for independent work, built around the daily needs of tracking missions, clients, deliverables, and payments.",
     problem:
@@ -200,7 +200,7 @@ export const projects: ProjectItem[] = [
       "CRUD",
       "Dashboard Design",
     ],
-    screenshots: ["/images/laptop-mockup-2.svg"],
+    screenshots: ["/images/Freelance management dashboard overview.png"],
   },
   {
     id: 6,
@@ -211,8 +211,8 @@ export const projects: ProjectItem[] = [
     category: "Web Interfaces",
     themeKey: "blue",
     bgColor: "bg-indigo-950",
-    imageSrc: "/images/laptop-mockup-3.svg",
-    imageAlt: "Nova AI landing page mockup",
+    imageSrc: "/images/Futuristic Nova AI assistant dashboard.png",
+    imageAlt: "Nova AI assistant landing page",
     description:
       "Nova AI Landing Page is a front-end project focused on building a polished, responsive product page for an AI-themed software offer.",
     problem:
@@ -237,6 +237,6 @@ export const projects: ProjectItem[] = [
       "Responsive Design",
       "UI Components",
     ],
-    screenshots: ["/images/laptop-mockup-3.svg"],
+    screenshots: ["/images/Futuristic Nova AI assistant dashboard.png"],
   },
 ];
