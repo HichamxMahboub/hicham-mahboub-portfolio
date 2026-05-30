@@ -2,6 +2,8 @@
 
 A professional internship portfolio for Hicham Mahboub, an Information Systems and Digital Transformation Engineering student looking for a junior full-stack / software engineering internship.
 
+Official portfolio URL: https://portfolio-prbrwhomy-hichamxmahboubs-projects.vercel.app
+
 The portfolio highlights practical projects around full-stack platforms, backend APIs, dashboards, admin panels, mobile apps, and digital transformation workflows. It is built to be simple to review, easy to deploy, and honest about project status.
 
 ## Tech Stack
