@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionTitle from "@/components/SectionTitle";
 import Timeline from "@/components/Timeline";
 import { Badge } from "@/components/ui/badge";
@@ -51,10 +52,15 @@ export default function AboutPage() {
             <section className="px-4 pb-24 sm:px-6 lg:px-8">
                 <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.92fr,1.08fr] lg:items-start">
                     <Card className="overflow-hidden border-gray-200 bg-white p-4 shadow-sm dark:border-gray-800 dark:bg-gray-900">
-                        <div className="flex aspect-square items-center justify-center rounded-[1.5rem] bg-gradient-to-br from-black via-gray-900 to-accent-600 text-white">
-                            <span className="text-7xl font-semibold tracking-[-0.06em] text-white/25">
-                                HM
-                            </span>
+                        <div className="relative aspect-square overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-black via-gray-900 to-accent-600 text-white">
+                            <Image
+                                src="/images/My-pdp.png"
+                                alt="Hicham Mahboub profile photo"
+                                fill
+                                priority
+                                sizes="(max-width: 1024px) 100vw, 42vw"
+                                className="object-cover"
+                            />
                         </div>
                     </Card>
 

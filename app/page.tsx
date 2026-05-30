@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import ProjectCard from "@/components/ProjectCard";
 import { siteConfig } from "@/config/siteConfig";
@@ -56,9 +57,26 @@ export default async function HomePage() {
             </div>
 
             <div className="relative">
-              <div className="aspect-square overflow-hidden rounded-2xl bg-gradient-to-b from-gray-800 to-gray-950">
-                <div className="flex h-full items-center justify-center">
-                  <div className="flex h-48 w-48 items-center justify-center rounded-full border border-white/10 bg-white/5 text-6xl font-semibold tracking-tight text-white/80 shadow-2xl">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-gray-800 to-gray-950 shadow-2xl sm:aspect-square">
+                <Image
+                  src="/images/Hero.png"
+                  alt="Digital dashboard visual for Hicham Mahboub portfolio"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 sm:p-7">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/60">
+                      Portfolio
+                    </p>
+                    <p className="mt-2 max-w-xs text-sm leading-6 text-white/85">
+                      Full-stack, dashboards, APIs, and digital transformation projects.
+                    </p>
+                  </div>
+                  <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-black/45 text-2xl font-semibold tracking-tight text-white shadow-2xl backdrop-blur sm:h-24 sm:w-24 sm:text-3xl">
                     HM
                   </div>
                 </div>
