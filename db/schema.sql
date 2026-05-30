@@ -1,0 +1,21 @@
+create table if not exists projects (
+  id serial primary key,
+  slug text unique,
+  title text not null,
+  short_description text not null,
+  category text not null,
+  theme_key text,
+  bg_color text not null default 'bg-gray-900',
+  image_src text not null,
+  image_alt text not null,
+  description text not null,
+  problem text not null,
+  solution text not null,
+  result text not null,
+  key_features text[] not null default '{}',
+  learned text not null default '',
+  tech_stack text[] not null default '{}',
+  screenshots text[] not null default '{}',
+  live_link text,
+  github_link text
+);
