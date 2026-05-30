@@ -52,7 +52,7 @@ export default function AboutPage() {
             <section className="px-4 pb-24 sm:px-6 lg:px-8">
                 <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.92fr,1.08fr] lg:items-start">
                     <Card className="overflow-hidden border-gray-200 bg-white p-4 shadow-sm dark:border-gray-800 dark:bg-gray-900">
-                        <div className="relative aspect-square overflow-hidden rounded-[1.5rem] bg-gray-950 text-white">
+                        <div className="relative aspect-square overflow-hidden rounded-[1.5rem] bg-gray-100 text-white dark:bg-gray-950">
                             <Image
                                 src="/images/My-pdp.png"
                                 alt="Hicham Mahboub profile photo"
@@ -61,7 +61,7 @@ export default function AboutPage() {
                                 sizes="(max-width: 1024px) 100vw, 42vw"
                                 className="object-cover"
                             />
-                            <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/10 bg-black/55 p-4 backdrop-blur-md">
+                            <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/10 bg-black/45 p-4 backdrop-blur-md">
                                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/55">
                                     Hicham Mahboub
                                 </p>

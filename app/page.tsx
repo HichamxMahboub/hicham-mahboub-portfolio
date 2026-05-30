@@ -57,63 +57,53 @@ export default async function HomePage() {
             </div>
 
             <div className="relative">
-              <div className="relative min-h-[420px] overflow-hidden rounded-2xl border border-white/10 bg-[#0b0f17] shadow-2xl sm:min-h-[520px]">
-                <Image
-                  src="/images/Hero.png"
-                  alt="Digital dashboard visual for Hicham Mahboub portfolio"
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover opacity-55"
-                />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(34,211,238,0.22),transparent_28%),linear-gradient(135deg,rgba(2,6,23,0.92),rgba(15,23,42,0.48)_48%,rgba(0,0,0,0.86))]" />
-
-                <div className="absolute inset-0 grid grid-rows-[auto_1fr_auto] gap-5 p-5 sm:p-7">
-                  <div className="flex items-center justify-between gap-4">
-                    <div className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-medium text-white/80 backdrop-blur">
-                      Internship portfolio
-                    </div>
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-sm font-semibold text-cyan-100 backdrop-blur">
-                      HM
-                    </div>
-                  </div>
-
-                  <div className="grid content-center gap-4">
-                    <div className="max-w-sm rounded-2xl border border-white/10 bg-black/45 p-5 shadow-2xl backdrop-blur-md">
-                      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200/80">
-                        Developer workspace
+              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#10141f] p-4 shadow-2xl sm:p-6">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(34,211,238,0.2),transparent_28%),radial-gradient(circle_at_88%_72%,rgba(99,102,241,0.18),transparent_32%)]" />
+                <div className="relative grid gap-4 lg:grid-cols-[1fr,0.78fr] lg:items-stretch">
+                  <div className="relative min-h-[430px] overflow-hidden rounded-2xl bg-gray-950 sm:min-h-[520px]">
+                    <Image
+                      src="/images/My-pdp.png"
+                      alt="Hicham Mahboub profile photo"
+                      fill
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 34vw"
+                      className="object-cover object-center"
+                    />
+                    <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/10 bg-black/55 p-4 backdrop-blur-md">
+                      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-100/70">
+                        Internship candidate
                       </p>
-                      <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-                        Full-stack systems, dashboards, and APIs.
-                      </h2>
-                      <div className="mt-5 grid gap-3">
-                        <div className="flex items-center justify-between rounded-xl bg-white/10 px-3 py-2 text-sm text-white/80">
-                          <span>Backend APIs</span>
-                          <span className="text-cyan-200">REST</span>
-                        </div>
-                        <div className="flex items-center justify-between rounded-xl bg-white/10 px-3 py-2 text-sm text-white/80">
-                          <span>Dashboards</span>
-                          <span className="text-emerald-200">Analytics</span>
-                        </div>
-                        <div className="flex items-center justify-between rounded-xl bg-white/10 px-3 py-2 text-sm text-white/80">
-                          <span>Digital transformation</span>
-                          <span className="text-indigo-200">Workflows</span>
-                        </div>
-                      </div>
+                      <p className="mt-1 text-lg font-semibold text-white">
+                        Hicham Mahboub
+                      </p>
+                      <p className="mt-1 text-sm text-white/70">
+                        Full-stack development, dashboards, APIs, and digital transformation.
+                      </p>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-3 text-center">
-                    {[
-                      ["6", "Projects"],
-                      ["API", "Backend"],
-                      ["UI", "Dashboards"],
-                    ].map(([value, label]) => (
-                      <div key={label} className="rounded-2xl border border-white/10 bg-white/10 px-3 py-4 backdrop-blur">
-                        <p className="text-lg font-semibold text-white">{value}</p>
-                        <p className="mt-1 text-[11px] uppercase tracking-[0.18em] text-white/55">{label}</p>
-                      </div>
-                    ))}
+                  <div className="grid gap-4">
+                    <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur">
+                      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200/80">
+                        Focus
+                      </p>
+                      <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">
+                        Junior full-stack profile with engineering-school systems thinking.
+                      </h2>
+                    </div>
+                    <div className="grid gap-3">
+                      {[
+                        ["Backend APIs", "REST, Spring Boot, Node.js"],
+                        ["Dashboards", "Admin panels and analytics"],
+                        ["Mobile/Desktop", "Expo, Electron, JavaFX"],
+                        ["Digital transformation", "Business workflows and tools"],
+                      ].map(([label, value]) => (
+                        <div key={label} className="rounded-2xl border border-white/10 bg-black/25 p-4 backdrop-blur">
+                          <p className="text-sm font-medium text-white">{label}</p>
+                          <p className="mt-1 text-sm text-white/55">{value}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

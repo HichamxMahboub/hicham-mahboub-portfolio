@@ -47,6 +47,13 @@ export const projects: ProjectItem[] = [
       "Swagger",
     ],
     screenshots: ["/images/projects/smart-match.png"],
+    nextImprovements: [
+      "Add a live deployment for the main web interface",
+      "Improve README with screenshots and setup flow",
+      "Add demo credentials or a guided walkthrough",
+      "Add automated API tests for core matching flows",
+    ],
+    githubLink: "https://github.com/HichamxMahboub/Smart-Internship---Freelance-Matching-Platform",
   },
   {
     id: 2,
@@ -86,6 +93,13 @@ export const projects: ProjectItem[] = [
       "Admin Dashboard",
     ],
     screenshots: ["/images/projects/markethub.png"],
+    nextImprovements: [
+      "Add a live deployment when the marketplace flow is stable",
+      "Document vendor, customer, and admin setup steps",
+      "Add screenshots for dashboards and checkout states",
+      "Add tests around cart, order, and vendor workflows",
+    ],
+    githubLink: "https://github.com/HichamxMahboub/marketplace-hub",
   },
   {
     id: 3,
@@ -125,6 +139,14 @@ export const projects: ProjectItem[] = [
       "Local Storage",
     ],
     screenshots: ["/images/projects/competency-analytics-assistant.png"],
+    nextImprovements: [
+      "Add sample anonymized competency sheets for recruiters to test",
+      "Improve README with screenshots and report examples",
+      "Add validation tests for Excel parsing edge cases",
+      "Prepare a short video demo of the analysis flow",
+    ],
+    githubLink: "https://github.com/HichamxMahboub/Assistant-Analyse-Competences-v1.0.0",
+    liveLink: "https://project-seven-liard-45.vercel.app",
   },
   {
     id: 4,
@@ -163,6 +185,13 @@ export const projects: ProjectItem[] = [
       "Workflow Design",
     ],
     screenshots: ["/images/projects/social-media-command-center.png"],
+    nextImprovements: [
+      "Add a live demo with safe mock social data",
+      "Improve API documentation for auth and analytics endpoints",
+      "Add dashboard screenshots to the README",
+      "Add tests for authentication and scheduled-post flows",
+    ],
+    githubLink: "https://github.com/HichamxMahboub/social_media_tool",
   },
   {
     id: 5,
@@ -201,6 +230,13 @@ export const projects: ProjectItem[] = [
       "Dashboard Design",
     ],
     screenshots: ["/images/projects/freelance-manager.png"],
+    nextImprovements: [
+      "Add packaged release instructions for desktop users",
+      "Improve README with screenshots of client and KPI screens",
+      "Add sample CSV exports for review",
+      "Add tests for task, budget, and reporting logic",
+    ],
+    githubLink: "https://github.com/HichamxMahboub/freelance_manager",
   },
   {
     id: 6,
@@ -238,5 +274,13 @@ export const projects: ProjectItem[] = [
       "UI Components",
     ],
     screenshots: ["/images/projects/nova-ai-landing-page.png"],
+    nextImprovements: [
+      "Add more real content sections instead of generic landing-page copy",
+      "Improve accessibility checks for interactive sections",
+      "Add before-and-after responsive screenshots to the README",
+      "Add a small component test suite for key UI sections",
+    ],
+    githubLink: "https://github.com/HichamxMahboub/nova-ai-landing",
+    liveLink: "https://nova-ai-landing-ten.vercel.app",
   },
 ];

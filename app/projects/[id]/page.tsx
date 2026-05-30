@@ -52,40 +52,61 @@ export default async function ProjectDetailPage({
 
     return (
         <main className="min-h-screen bg-[#f5f3ee] text-gray-950 dark:bg-gray-950 dark:text-white">
-            <section className={`relative overflow-hidden ${project.bgColor}`}>
-                <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/30 to-black/75" />
-                {project.imageSrc ? (
-                    <Image
-                        src={project.imageSrc}
-                        alt={project.imageAlt ?? project.title}
-                        fill
-                        className="object-cover opacity-85 mix-blend-multiply"
-                        priority
-                        sizes="100vw"
-                    />
-                ) : (
-                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800">
-                        <div className="flex h-36 w-36 items-center justify-center rounded-[2rem] border border-white/15 bg-white/10 text-5xl font-semibold text-white">
-                            {initials}
-                        </div>
-                    </div>
-                )}
-                <div className="relative mx-auto flex min-h-[72vh] max-w-7xl items-end px-4 pb-12 pt-24 sm:px-6 lg:px-8 lg:pb-16 lg:pt-28">
-                    <div className="max-w-4xl space-y-5 text-white">
-                        <Badge variant="secondary" className="w-fit">
+            <section className="px-4 pb-16 pt-20 sm:px-6 lg:px-8 lg:pt-24">
+                <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.95fr,1.05fr] lg:items-center">
+                    <div className="space-y-6">
+                        <Badge variant="outline" className="w-fit uppercase tracking-[0.22em]">
                             {project.category}
                         </Badge>
-                        <h1 className="text-4xl font-semibold tracking-[-0.05em] sm:text-5xl lg:text-7xl">
-                            {project.title}
-                        </h1>
-                        <p className="max-w-2xl text-base leading-7 text-white/85 sm:text-lg">
-                            {project.description}
-                        </p>
+                        <div className="space-y-5">
+                            <h1 className="max-w-4xl text-4xl font-semibold tracking-[-0.05em] sm:text-5xl lg:text-7xl">
+                                {project.title}
+                            </h1>
+                            <p className="max-w-2xl text-base leading-7 text-gray-600 dark:text-gray-300 sm:text-lg">
+                                {project.description}
+                            </p>
+                        </div>
+
+                        {hasProjectLinks && (
+                            <div className="flex flex-col gap-3 sm:flex-row">
+                                {project.githubLink && (
+                                    <Button href={project.githubLink} variant="outline" target="_blank">
+                                        View Code
+                                    </Button>
+                                )}
+                                {project.liveLink && (
+                                    <Button href={project.liveLink} target="_blank">
+                                        Live Demo
+                                    </Button>
+                                )}
+                            </div>
+                        )}
+                    </div>
+
+                    <div className="rounded-[1.75rem] border border-gray-200 bg-white p-3 shadow-sm dark:border-gray-800 dark:bg-gray-900">
+                        <div className={"relative aspect-[16/10] overflow-hidden rounded-[1.25rem] " + project.bgColor}>
+                            {project.imageSrc ? (
+                                <Image
+                                    src={project.imageSrc}
+                                    alt={project.imageAlt ?? project.title}
+                                    fill
+                                    className="object-cover"
+                                    priority
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                />
+                            ) : (
+                                <div className="flex h-full items-center justify-center bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800">
+                                    <div className="flex h-28 w-28 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-4xl font-semibold text-white">
+                                        {initials}
+                                    </div>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section className="px-4 pb-24 pt-16 sm:px-6 lg:px-8">
+            <section className="px-4 pb-24 sm:px-6 lg:px-8">
                 <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:items-start">
                     <div className="space-y-8">
                         <Card>
@@ -140,20 +161,6 @@ export default async function ProjectDetailPage({
                             </CardContent>
                         </Card>
 
-                        <Card className="bg-gray-950 text-white dark:bg-white dark:text-gray-950">
-                            <CardHeader>
-                                <CardDescription className="text-white/60 dark:text-gray-600">
-                                    Internship relevance
-                                </CardDescription>
-                                <CardTitle>What this project demonstrates</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-lg leading-8 text-white/85 dark:text-gray-700">
-                                    {project.result}
-                                </p>
-                            </CardContent>
-                        </Card>
-
                         <Card>
                             <CardHeader>
                                 <CardDescription>What I learned</CardDescription>
@@ -176,7 +183,7 @@ export default async function ProjectDetailPage({
                             <CardContent>
                                 <div className="flex flex-wrap gap-2">
                                     {project.techStack.map((tech) => (
-                                        <Badge key={`${project.id}-tech-${tech}`} variant="secondary">
+                                        <Badge key={project.id + "-tech-" + tech} variant="secondary">
                                             {tech}
                                         </Badge>
                                     ))}
@@ -184,42 +191,51 @@ export default async function ProjectDetailPage({
                             </CardContent>
                         </Card>
 
-                        {hasProjectLinks && (
+                        <Card className="bg-gray-950 text-white dark:bg-white dark:text-gray-950">
+                            <CardHeader>
+                                <CardDescription className="text-white/60 dark:text-gray-600">
+                                    Internship relevance
+                                </CardDescription>
+                                <CardTitle>What this project demonstrates</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-sm leading-6 text-white/85 dark:text-gray-700">
+                                    {project.result}
+                                </p>
+                            </CardContent>
+                        </Card>
+
+                        {project.nextImprovements && project.nextImprovements.length > 0 && (
                             <Card>
                                 <CardHeader>
-                                    <CardDescription>Links</CardDescription>
-                                    <CardTitle>Explore the project</CardTitle>
+                                    <CardDescription>Next improvements</CardDescription>
+                                    <CardTitle>Practical next steps</CardTitle>
                                 </CardHeader>
-                                <CardContent className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-                                    {project.githubLink && (
-                                        <Button href={project.githubLink} variant="outline" target="_blank">
-                                            GitHub
-                                        </Button>
-                                    )}
-                                    {project.liveLink && (
-                                        <Button href={project.liveLink} variant="default" target="_blank">
-                                            Live Demo
-                                        </Button>
-                                    )}
+                                <CardContent>
+                                    <div className="space-y-3">
+                                        {project.nextImprovements.map((item) => (
+                                            <p key={item} className="rounded-2xl bg-gray-50 px-4 py-3 text-sm leading-6 text-gray-700 dark:bg-gray-900/60 dark:text-gray-300">
+                                                {item}
+                                            </p>
+                                        ))}
+                                    </div>
                                 </CardContent>
                             </Card>
                         )}
 
-                        <Card className="bg-gray-950 text-white dark:bg-white dark:text-gray-950">
+                        <Card>
                             <CardHeader>
-                                <CardDescription className="text-white/60 dark:text-gray-600">
-                                    Recruiter note
-                                </CardDescription>
+                                <CardDescription>Recruiter note</CardDescription>
                                 <CardTitle>Internship fit</CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-sm leading-6 text-white/80 dark:text-gray-700">
+                                <p className="text-sm leading-6 text-gray-600 dark:text-gray-300">
                                     I am looking for internship work where I can contribute to
                                     full-stack features, dashboards, APIs, and internal tools while
                                     learning from an experienced team.
                                 </p>
                                 <div className="mt-5">
-                                    <Button href="/contact" variant="secondary">
+                                    <Button href="/contact" variant="outline">
                                         Contact me
                                     </Button>
                                 </div>
@@ -246,10 +262,8 @@ export default async function ProjectDetailPage({
                     <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                         {relatedProjects.map((relatedProject) => (
                             <Card key={relatedProject.id} className="overflow-hidden">
-                                <Link href={`/projects/${relatedProject.id}`} className="block">
-                                    <div
-                                        className={`relative h-52 overflow-hidden ${relatedProject.bgColor}`}
-                                    >
+                                <Link href={"/projects/" + relatedProject.id} className="block">
+                                    <div className={"relative h-52 overflow-hidden " + relatedProject.bgColor}>
                                         {relatedProject.imageSrc ? (
                                             <Image
                                                 src={relatedProject.imageSrc}

@@ -40,6 +40,7 @@ type ProjectRow = {
     learned: string;
     techStack: string[];
     screenshots: string[];
+    nextImprovements: string[] | null;
     liveLink: string | null;
     githubLink: string | null;
 };
@@ -63,6 +64,7 @@ function toProjectItem(row: ProjectRow): ProjectItem {
         learned: row.learned,
         techStack: row.techStack ?? [],
         screenshots: row.screenshots ?? [],
+        nextImprovements: row.nextImprovements ?? [],
         liveLink: row.liveLink ?? undefined,
         githubLink: row.githubLink ?? undefined,
     };
@@ -93,6 +95,7 @@ async function fetchProjectsFromDb(): Promise<ProjectItem[]> {
         learned,
         tech_stack as "techStack",
         screenshots,
+        next_improvements as "nextImprovements",
         live_link as "liveLink",
         github_link as "githubLink"
       from projects

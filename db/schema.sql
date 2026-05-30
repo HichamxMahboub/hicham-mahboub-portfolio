@@ -16,6 +16,7 @@ create table if not exists projects (
   learned text not null default '',
   tech_stack text[] not null default '{}',
   screenshots text[] not null default '{}',
+  next_improvements text[] not null default '{}',
   live_link text,
   github_link text
 );

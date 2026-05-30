@@ -57,6 +57,7 @@ export interface ProjectItem {
     learned: string;
     techStack: string[];
     screenshots: string[];
+    nextImprovements?: string[];
     liveLink?: string;
     githubLink?: string;
 }
@@ -75,6 +76,9 @@ export interface SiteConfig {
     description: string;
     url: string | null;
     contactEmail: string | null;
+    academicEmail: string;
+    personalEmail: string;
+    phone: string;
     cvPath: string;
     githubUrl: string;
     linkedinUrl: string | null;

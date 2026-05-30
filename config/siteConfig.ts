@@ -6,9 +6,12 @@
 import type { NavItem, SocialLink, FooterLink, SiteConfig } from "@/types";
 
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim() || null;
-export const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || null;
+export const academicEmail = "hicham.mahboub@esi.ac.ma";
+export const personalEmail = "hichammahboub45@gmail.com";
+export const phone = "+212 621 960 921";
+export const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || academicEmail;
 export const linkedinUrl = process.env.NEXT_PUBLIC_LINKEDIN_URL?.trim() || null;
-export const githubUrl = "https://github.com/hicham-mahboub";
+export const githubUrl = "https://github.com/HichamxMahboub";
 export const cvPath = "/Hicham-Mahboub-CV.pdf";
 
 export const navItems: NavItem[] = [
@@ -39,6 +42,9 @@ export const siteConfig: SiteConfig = {
     "Information Systems and Digital Transformation Engineering student seeking an internship as a junior full-stack developer.",
   url: siteUrl,
   contactEmail,
+  academicEmail,
+  personalEmail,
+  phone,
   cvPath,
   githubUrl,
   linkedinUrl,
