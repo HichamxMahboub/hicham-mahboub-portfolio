@@ -59,13 +59,13 @@ GitHub is configured in `config/siteConfig.ts`.
 
 ## Add the CV PDF
 
-The CV download buttons expect this file:
+The CV file is stored at:
 
 ```text
 public/Hicham-Mahboub-CV.pdf
 ```
 
-Add the real CV PDF at that path before sharing the site. The project does not generate or invent CV content.
+Keep the real CV PDF at that path before sharing the site. The project does not generate or invent CV content.
 
 ## Project Data
 
@@ -105,7 +105,7 @@ The app falls back to local project data if no database URL is configured or if 
 3. Set the build command to `npm run build` if Vercel does not auto-detect it.
 4. Add environment variables in Vercel Project Settings.
 5. Set `NEXT_PUBLIC_SITE_URL` to the final deployed URL.
-6. Add `public/Hicham-Mahboub-CV.pdf` before final sharing if the CV button should work.
+6. Keep `public/Hicham-Mahboub-CV.pdf` in the repository before final sharing so the CV button works.
 7. Deploy.
 
 ## Validation
@@ -122,4 +122,4 @@ npm run build
 - No fake phone number or address is included.
 - LinkedIn is only shown when `NEXT_PUBLIC_LINKEDIN_URL` is configured.
 - Live demo buttons only appear when a project has a real `liveLink`.
-- CV download points to `/Hicham-Mahboub-CV.pdf` and requires the real PDF in `public/`.
+- CV download points to `/Hicham-Mahboub-CV.pdf`, backed by `public/Hicham-Mahboub-CV.pdf`.
