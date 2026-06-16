@@ -118,7 +118,13 @@ export async function getProjects() {
 
 export async function getFeaturedProjects(limit = 3) {
     const items = await fetchProjectsFromDb();
-    return items.slice(0, limit);
+    const smartSim = items.find((project) => project.slug === "smartsim-analytics");
+
+    if (!smartSim) {
+        return items.slice(0, limit);
+    }
+
+    return [smartSim, ...items.filter((project) => project.slug !== "smartsim-analytics")].slice(0, limit);
 }
 
 export async function getProjectById(id: number) {

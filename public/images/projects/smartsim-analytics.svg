@@ -1,0 +1,56 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="140" y1="80" x2="1450" y2="840" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#04111d" />
+      <stop offset="0.52" stop-color="#062437" />
+      <stop offset="1" stop-color="#0d3d55" />
+    </linearGradient>
+    <linearGradient id="panel" x1="340" y1="220" x2="1260" y2="690" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f172a" stop-opacity="0.95" />
+      <stop offset="1" stop-color="#111827" stop-opacity="0.88" />
+    </linearGradient>
+    <linearGradient id="line" x1="450" y1="580" x2="1150" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67e8f9" />
+      <stop offset="0.5" stop-color="#22d3ee" />
+      <stop offset="1" stop-color="#a78bfa" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#a5f3fc" />
+      <stop offset="1" stop-color="#22d3ee" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="48" fill="url(#bg)" />
+  <circle cx="320" cy="190" r="160" fill="#22d3ee" fill-opacity="0.12" />
+  <circle cx="1305" cy="220" r="220" fill="#a78bfa" fill-opacity="0.12" />
+  <circle cx="1260" cy="700" r="180" fill="#67e8f9" fill-opacity="0.09" />
+  <rect x="170" y="140" width="1260" height="620" rx="36" fill="#06121f" fill-opacity="0.78" stroke="#143046" stroke-width="2" />
+  <rect x="220" y="205" width="430" height="150" rx="24" fill="#0b1727" stroke="#17354e" stroke-width="2" />
+  <rect x="220" y="385" width="430" height="275" rx="24" fill="#0b1727" stroke="#17354e" stroke-width="2" />
+  <rect x="690" y="205" width="690" height="455" rx="24" fill="url(#panel)" stroke="#17354e" stroke-width="2" />
+  <rect x="690" y="685" width="690" height="75" rx="22" fill="#0b1727" stroke="#17354e" stroke-width="2" />
+  <rect x="260" y="248" width="130" height="16" rx="8" fill="#22d3ee" fill-opacity="0.9" />
+  <rect x="260" y="278" width="250" height="12" rx="6" fill="#dbeafe" fill-opacity="0.55" />
+  <rect x="260" y="302" width="200" height="12" rx="6" fill="#dbeafe" fill-opacity="0.25" />
+  <rect x="720" y="248" width="180" height="46" rx="16" fill="#0f172a" stroke="#1f3b52" stroke-width="2" />
+  <rect x="920" y="248" width="180" height="46" rx="16" fill="#0f172a" stroke="#1f3b52" stroke-width="2" />
+  <rect x="1120" y="248" width="210" height="46" rx="16" fill="#0f172a" stroke="#1f3b52" stroke-width="2" />
+  <rect x="720" y="325" width="606" height="50" rx="16" fill="#0f172a" stroke="#1f3b52" stroke-width="2" />
+  <rect x="720" y="395" width="606" height="50" rx="16" fill="#0f172a" stroke="#1f3b52" stroke-width="2" />
+  <rect x="720" y="465" width="606" height="50" rx="16" fill="#0f172a" stroke="#1f3b52" stroke-width="2" />
+  <rect x="720" y="535" width="606" height="50" rx="16" fill="#0f172a" stroke="#1f3b52" stroke-width="2" />
+  <path d="M260 596L340 560L410 580L478 506L546 528L616 420" stroke="url(#line)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M260 596L340 560L410 580L478 506L546 528L616 420" stroke="#e0f2fe" stroke-opacity="0.18" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M260 596H616" stroke="#dbeafe" stroke-opacity="0.1" stroke-width="2" />
+  <circle cx="340" cy="560" r="10" fill="#67e8f9" />
+  <circle cx="478" cy="506" r="10" fill="#22d3ee" />
+  <circle cx="616" cy="420" r="10" fill="#a78bfa" />
+  <rect x="760" y="732" width="180" height="18" rx="9" fill="#67e8f9" fill-opacity="0.8" />
+  <rect x="965" y="732" width="110" height="18" rx="9" fill="#22d3ee" fill-opacity="0.65" />
+  <rect x="1095" y="732" width="180" height="18" rx="9" fill="#a78bfa" fill-opacity="0.7" />
+  <text x="260" y="625" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600">Simulation analytics dashboard</text>
+  <text x="260" y="652" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="18">KPIs, anomalies, trend, stability, PDF reporting</text>
+  <text x="720" y="610" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="600">Deterministic Python analysis</text>
+  <text x="720" y="640" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="18">React + Node/Express + MongoDB + Python</text>
+  <rect x="1180" y="726" width="126" height="30" rx="15" fill="url(#accent)" fill-opacity="0.18" stroke="#67e8f9" stroke-opacity="0.6" />
+  <text x="1201" y="747" fill="#cffafe" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600">CI ready</text>
+</svg>

@@ -14,6 +14,65 @@ const sql = neon(databaseUrl);
 
 const projects = [
   {
+    id: 7,
+    title: "SmartSim Analytics",
+    slug: "smartsim-analytics",
+    shortDescription:
+      "A full-stack simulation analytics platform for CSV/JSON exports, deterministic Python analysis, KPIs, anomaly detection, trend and stability checks, and PDF reporting.",
+    category: "Simulation Analytics / Full-Stack Data Platform",
+    themeKey: "cyan",
+    bgColor: "bg-cyan-950",
+    imageSrc: "/images/projects/smartsim-analytics.svg",
+    imageAlt: "SmartSim Analytics dashboard preview",
+    description:
+      "SmartSim Analytics is a full-stack simulation analytics platform built with React, Node/Express, MongoDB, and Python. It ingests CSV/JSON simulation exports, runs deterministic Python analysis for KPIs, anomaly detection, trend and stability checks, and presents results through a dashboard with charts and PDF reporting.",
+    problem:
+      "Simulation exports can be difficult to review manually because the data is spread across rows, signals, and multiple derived measures. Teams need a clear way to validate the input, identify anomalies, understand stability, and present findings in a format that is easy to review.",
+    solution:
+      "I structured SmartSim Analytics around a React frontend, a Node/Express API, MongoDB persistence, and a deterministic Python analyzer. The backend validates uploads, confines analysis to uploaded files, and runs a bounded Python script that calculates KPIs, detects anomalies, evaluates trend and stability, and returns versioned JSON for the dashboard.",
+    result:
+      "This project demonstrates end-to-end simulation analytics, safer execution boundaries, recruiter-facing documentation, and a full-stack workflow that turns raw CSV/JSON exports into a readable dashboard and PDF report.",
+    keyFeatures: [
+      "CSV/JSON simulation data ingestion",
+      "Python-powered deterministic analytics",
+      "KPI extraction and anomaly detection",
+      "Trend and stability analysis",
+      "React dashboard with charts",
+      "PDF reporting workflow",
+      "Node/Express API with validation",
+      "MongoDB-backed project storage",
+      "Bounded Python execution for safer analysis",
+      "Sample data and recruiter-facing documentation",
+      "GitHub Actions CI",
+    ],
+    learned:
+      "I learned how important it is to define stable input/output contracts, keep analytics deterministic, and treat execution boundaries as part of the product rather than an afterthought.",
+    techStack: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Python",
+      "Vite",
+      "Charts",
+      "PDF reporting",
+      "GitHub Actions",
+    ],
+    screenshots: [],
+    nextImprovements: [
+      "Add a live deployment when hosting is finalized",
+      "Expand the dataset library with more simulation scenarios",
+      "Add automated integration tests for upload and analysis flows",
+      "Introduce a stored API demo once deployment is available",
+    ],
+    statusItems: [
+      { label: "Live Demo", value: "Coming soon" },
+      { label: "API Demo", value: "Coming soon" },
+    ],
+    githubLink: "https://github.com/HichamxMahboub/SmartSim-Analytics",
+  },
+  {
     id: 1,
     title: "Smart Match - Internship & Freelance Matching Platform",
     slug: "smart-match-internship-freelance-platform",

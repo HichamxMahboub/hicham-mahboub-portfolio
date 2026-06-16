@@ -30,6 +30,8 @@ function getCategoryTone(category: ProjectItem["category"]) {
       return "from-emerald-950 via-neutral-900 to-zinc-950";
     case "Full-Stack Platforms":
       return "from-slate-950 via-slate-800 to-cyan-900";
+    case "Simulation Analytics / Full-Stack Data Platform":
+      return "from-cyan-950 via-slate-900 to-sky-900";
     case "Education Analytics / Desktop App":
       return "from-teal-950 via-slate-900 to-emerald-900";
     case "Dashboards & Analytics":

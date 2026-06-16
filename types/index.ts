@@ -47,6 +47,7 @@ export interface ProjectItem {
     category:
         | "Backend API / Marketplace Platform"
         | "Full-Stack Platforms"
+        | "Simulation Analytics / Full-Stack Data Platform"
         | "Education Analytics / Desktop App"
         | "Dashboards & Analytics"
         | "Digital Tools"
