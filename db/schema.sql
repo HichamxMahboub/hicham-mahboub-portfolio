@@ -17,6 +17,7 @@ create table if not exists projects (
   tech_stack text[] not null default '{}',
   screenshots text[] not null default '{}',
   next_improvements text[] not null default '{}',
+  status_items jsonb not null default '[]'::jsonb,
   live_link text,
   github_link text
 );

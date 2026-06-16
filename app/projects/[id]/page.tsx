@@ -191,6 +191,27 @@ export default async function ProjectDetailPage({
                             </CardContent>
                         </Card>
 
+                        {project.statusItems && project.statusItems.length > 0 && (
+                            <Card>
+                                <CardHeader>
+                                    <CardDescription>API status</CardDescription>
+                                    <CardTitle>Availability</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <div className="space-y-3">
+                                        {project.statusItems.map((item) => (
+                                            <div key={item.label} className="flex items-center justify-between gap-4 rounded-2xl bg-gray-50 px-4 py-3 text-sm dark:bg-gray-900/60">
+                                                <span className="text-gray-600 dark:text-gray-300">
+                                                    {item.label}
+                                                </span>
+                                                <Badge variant="outline">{item.value}</Badge>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        )}
+
                         <Card className="bg-gray-950 text-white dark:bg-white dark:text-gray-950">
                             <CardHeader>
                                 <CardDescription className="text-white/60 dark:text-gray-600">

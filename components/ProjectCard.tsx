@@ -26,6 +26,8 @@ function getInitials(title: string) {
 
 function getCategoryTone(category: ProjectItem["category"]) {
   switch (category) {
+    case "Backend API / Marketplace Platform":
+      return "from-emerald-950 via-neutral-900 to-zinc-950";
     case "Full-Stack Platforms":
       return "from-slate-950 via-slate-800 to-cyan-900";
     case "Dashboards & Analytics":
@@ -92,6 +94,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <Badge variant="outline">+{project.techStack.length - 4}</Badge>
           )}
         </div>
+
+        {project.statusItems && project.statusItems.length > 0 && (
+          <div className="grid gap-2 rounded-2xl bg-gray-50 p-3 text-sm dark:bg-gray-900/60">
+            {project.statusItems.map((item) => (
+              <div key={`${project.id}-${item.label}`} className="flex items-center justify-between gap-3">
+                <span className="text-gray-500 dark:text-gray-400">{item.label}</span>
+                <span className="font-medium text-gray-900 dark:text-gray-100">{item.value}</span>
+              </div>
+            ))}
+          </div>
+        )}
 
         {hasProjectLinks && (
           <div className="flex flex-wrap gap-3">

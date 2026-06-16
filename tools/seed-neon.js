@@ -61,47 +61,54 @@ const projects = [
   },
   {
     id: 2,
-    title: "MarketHub - Multi-Vendor Marketplace",
-    slug: "markethub-multi-vendor-marketplace",
+    title: "MarketHub",
+    slug: "markethub",
     shortDescription:
-      "A marketplace concept with vendor onboarding, product management, customer ordering, admin moderation, and transaction-oriented data flows.",
-    category: "Full-Stack Platforms",
+      "A professional .NET 8 marketplace backend API with role-based access, marketplace workflows, PostgreSQL persistence, Swagger, Docker, tests, and CI.",
+    category: "Backend API / Marketplace Platform",
     themeKey: "neutral",
     bgColor: "bg-neutral-950",
-    imageSrc: "/images/projects/markethub.png",
-    imageAlt: "MarketHub marketplace dashboard",
+    imageAlt: "MarketHub backend API project",
     description:
-      "MarketHub is a multi-vendor marketplace project focused on the operational logic behind sellers, products, customers, orders, payments, and moderation.",
+      "MarketHub is a professional marketplace backend API built with .NET 8, ASP.NET Core, Entity Framework Core, PostgreSQL, JWT authentication, Swagger, Docker, unit tests, and GitHub Actions CI.",
     problem:
-      "A marketplace is not only a product listing page. Vendors need onboarding and inventory tools, customers need a clear ordering flow, and administrators need visibility into products, users, and transaction states.",
+      "The project is now a backend-first marketplace platform, so the main challenge was organizing real API boundaries for roles, products, carts, orders, reviews, authentication, persistence, and documentation.",
     solution:
-      "I modelled the platform around vendor accounts, product catalogs, categories, carts, order tracking, admin review flows, and dashboard metrics. The project emphasizes clean module separation between marketplace browsing, vendor management, and admin operations.",
+      "I structured MarketHub as a layered ASP.NET Core API with EF Core data access, PostgreSQL persistence, JWT-secured role flows for Admin, Vendor, and Customer users, Swagger API documentation, Dockerized development, unit tests, and a GitHub Actions CI workflow.",
     result:
-      "This project shows my ability to reason about business workflows, CRUD-heavy interfaces, relational data, access roles, dashboard summaries, and scalable full-stack feature organization without claiming a live production launch.",
+      "This project demonstrates backend API development with .NET 8, relational data modelling, role-based authorization, marketplace domain workflows, automated verification, containerized setup, and clear delivery documentation.",
     keyFeatures: [
-      "Vendor onboarding and product catalog structure",
-      "Customer cart and order-state planning",
-      "Admin moderation and marketplace visibility",
-      "Dashboard metrics for products, orders, and vendors",
+      "Clean layered architecture",
+      "Admin, Vendor, and Customer roles",
+      "Product, category, cart, order, and review management",
+      "PostgreSQL persistence with EF Core",
+      "JWT authentication",
+      "Swagger API documentation",
+      "Dockerized development environment",
+      "Unit tests and CI workflow",
     ],
     learned:
-      "I learned to separate customer, vendor, and admin concerns so each user role has a clear workflow without mixing unrelated responsibilities in the same interface.",
+      "I learned to approach marketplace work from the API contract first: clear layers, explicit roles, predictable persistence, and repeatable verification make the platform easier to test and extend.",
     techStack: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Node.js",
+      ".NET 8",
+      "ASP.NET Core",
+      "EF Core",
       "PostgreSQL",
-      "REST APIs",
-      "Admin Dashboard",
+      "JWT",
+      "Swagger",
+      "Docker",
+      "GitHub Actions",
     ],
-    screenshots: ["/images/projects/markethub.png"],
+    screenshots: [],
     nextImprovements: [
-      "Add a live deployment when the marketplace flow is stable",
-      "Document vendor, customer, and admin setup steps",
-      "Add screenshots for dashboards and checkout states",
-      "Add tests around cart, order, and vendor workflows",
+      "Publish the live API when deployment is ready",
+      "Publish the hosted Swagger documentation when deployment is ready",
+      "Expand integration tests for cart, order, and review workflows",
+      "Add deployment notes for the production database and API environment",
+    ],
+    statusItems: [
+      { label: "Live API", value: "Coming soon" },
+      { label: "Swagger", value: "Coming soon" },
     ],
     githubLink: "https://github.com/HichamxMahboub/marketplace-hub",
   },
@@ -310,6 +317,7 @@ async function seed() {
     tech_stack text[] not null default '{}',
     screenshots text[] not null default '{}',
     next_improvements text[] not null default '{}',
+    status_items jsonb not null default '[]'::jsonb,
     live_link text,
     github_link text
   )`;
@@ -317,6 +325,7 @@ async function seed() {
     await sql`alter table projects add column if not exists key_features text[] not null default '{}'`;
     await sql`alter table projects add column if not exists learned text not null default ''`;
     await sql`alter table projects add column if not exists next_improvements text[] not null default '{}'`;
+    await sql`alter table projects add column if not exists status_items jsonb not null default '[]'::jsonb`;
 
     for (const project of projects) {
         await sql`
@@ -339,6 +348,7 @@ async function seed() {
         tech_stack,
         screenshots,
         next_improvements,
+        status_items,
         live_link,
         github_link
       ) values (
@@ -360,6 +370,7 @@ async function seed() {
         ${project.techStack},
         ${project.screenshots},
         ${project.nextImprovements ?? []},
+        ${JSON.stringify(project.statusItems ?? [])}::jsonb,
         ${project.liveLink ?? null},
         ${project.githubLink ?? null}
       )
@@ -381,6 +392,7 @@ async function seed() {
         tech_stack = excluded.tech_stack,
         screenshots = excluded.screenshots,
         next_improvements = excluded.next_improvements,
+        status_items = excluded.status_items,
         live_link = excluded.live_link,
         github_link = excluded.github_link
     `;

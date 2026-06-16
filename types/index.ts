@@ -44,7 +44,12 @@ export interface ProjectItem {
     title: string;
     slug?: string;
     shortDescription: string;
-    category: "Full-Stack Platforms" | "Dashboards & Analytics" | "Digital Tools" | "Web Interfaces";
+    category:
+        | "Backend API / Marketplace Platform"
+        | "Full-Stack Platforms"
+        | "Dashboards & Analytics"
+        | "Digital Tools"
+        | "Web Interfaces";
     themeKey?: string;
     bgColor: string;
     imageSrc?: string;
@@ -58,6 +63,10 @@ export interface ProjectItem {
     techStack: string[];
     screenshots: string[];
     nextImprovements?: string[];
+    statusItems?: {
+        label: string;
+        value: string;
+    }[];
     liveLink?: string;
     githubLink?: string;
 }
