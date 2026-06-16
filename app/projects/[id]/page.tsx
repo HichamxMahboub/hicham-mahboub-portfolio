@@ -194,7 +194,7 @@ export default async function ProjectDetailPage({
                         {project.statusItems && project.statusItems.length > 0 && (
                             <Card>
                                 <CardHeader>
-                                    <CardDescription>API status</CardDescription>
+                                    <CardDescription>Project status</CardDescription>
                                     <CardTitle>Availability</CardTitle>
                                 </CardHeader>
                                 <CardContent>
