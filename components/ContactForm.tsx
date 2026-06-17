@@ -53,8 +53,8 @@ ${formData.message}`,
     return (
       <div className="space-y-5">
         <div>
-          <h2 className="text-2xl font-semibold tracking-tight">Contact form unavailable</h2>
-          <p className="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-300">
+          <h2 className="text-2xl font-semibold text-white">Contact form unavailable</h2>
+          <p className="mt-3 text-sm leading-6 text-slate-400">
             Please reach out through one of the available social links.
           </p>
         </div>
@@ -75,6 +75,7 @@ ${formData.message}`,
         <Input
           type="text"
           name="name"
+          aria-label="Your name"
           placeholder="Your Name"
           value={formData.name}
           onChange={handleChange}
@@ -83,6 +84,7 @@ ${formData.message}`,
         <Input
           type="email"
           name="email"
+          aria-label="Your email"
           placeholder="Your Email"
           value={formData.email}
           onChange={handleChange}
@@ -93,6 +95,7 @@ ${formData.message}`,
       <Input
         type="text"
         name="subject"
+        aria-label="Email subject"
         placeholder="Subject"
         value={formData.subject}
         onChange={handleChange}
@@ -101,6 +104,7 @@ ${formData.message}`,
 
       <Textarea
         name="message"
+        aria-label="Your message"
         placeholder="Your Message"
         rows={6}
         value={formData.message}
@@ -109,7 +113,7 @@ ${formData.message}`,
       />
 
       {submitMessage && (
-        <div className="rounded-lg bg-green-50 p-4 text-sm font-medium text-green-800 dark:bg-green-900/20 dark:text-green-300">
+        <div className="rounded-lg border border-emerald-300/20 bg-emerald-300/10 p-4 text-sm font-medium text-emerald-100">
           {submitMessage}
         </div>
       )}

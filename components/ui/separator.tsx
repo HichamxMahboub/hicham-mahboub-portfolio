@@ -6,7 +6,7 @@ function Separator({
 }: React.HTMLAttributes<HTMLHRElement>) {
   return (
     <hr
-      className={cn("border-gray-200 dark:border-gray-800", className)}
+      className={cn("border-white/10", className)}
       {...props}
     />
   );

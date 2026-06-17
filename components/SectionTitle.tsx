@@ -10,17 +10,13 @@ export default function SectionTitle({
   description,
 }: SectionTitleProps) {
   return (
-    <div className="space-y-4">
-      {subtitle && (
-        <p className="text-sm font-semibold uppercase tracking-widest text-accent-600">
-          {subtitle}
-        </p>
-      )}
-      <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">
+    <div className="max-w-3xl space-y-4">
+      {subtitle && <p className="text-sm font-medium text-cyan-100">{subtitle}</p>}
+      <h2 className="text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">
         {title}
       </h2>
       {description && (
-        <p className="max-w-2xl text-lg text-gray-600 dark:text-gray-400">
+        <p className="max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
           {description}
         </p>
       )}

@@ -9,7 +9,7 @@ function Textarea({
   return (
     <textarea
       className={cn(
-        "flex min-h-32 w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-950 shadow-sm transition-colors placeholder:text-gray-400 focus:border-gray-950 focus:outline-none focus:ring-2 focus:ring-gray-950/10 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-800 dark:bg-gray-950 dark:text-white dark:focus:border-white dark:focus:ring-white/10",
+        "flex min-h-32 w-full rounded-lg border border-white/10 bg-slate-950/60 px-4 py-3 text-sm text-white shadow-none transition-colors placeholder:text-slate-500 focus:border-cyan-200/60 focus:outline-none focus:ring-2 focus:ring-cyan-200/10 disabled:cursor-not-allowed disabled:opacity-50",
         className,
       )}
       {...props}

@@ -50,7 +50,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const initials = getInitials(project.title);
 
   return (
-    <Card className="group h-full overflow-hidden border-gray-200/80 bg-white/95 shadow-[0_18px_50px_rgba(2,6,23,0.08)] transition-transform duration-300 hover:-translate-y-1 dark:border-white/10 dark:bg-white/[0.04] dark:shadow-none">
+    <Card className="group h-full overflow-hidden border-white/10 bg-white/[0.04] transition-transform duration-300 hover:-translate-y-1">
       <Link href={`/projects/${project.id}`} className="block">
         <div className={`relative aspect-video overflow-hidden ${getCategoryTone(project.category)}`}>
           {project.imageSrc ? (
@@ -70,7 +70,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/78 via-black/18 to-transparent" />
           <div className="absolute left-4 top-4 max-w-[calc(100%-2rem)]">
-            <Badge variant="secondary" className="whitespace-normal rounded-md bg-white/92 text-gray-950">
+            <Badge variant="default" className="whitespace-normal rounded-md">
               {project.category}
             </Badge>
           </div>
@@ -83,7 +83,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <CardHeader className="space-y-3">
         <Link href={`/projects/${project.id}`} className="block space-y-3">
           <CardTitle className="text-xl leading-tight">{project.title}</CardTitle>
-          <CardDescription className="leading-6">{project.shortDescription}</CardDescription>
+          <CardDescription className="leading-6 text-slate-400">{project.shortDescription}</CardDescription>
         </Link>
       </CardHeader>
 
@@ -100,11 +100,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         {project.statusItems && project.statusItems.length > 0 && (
-          <div className="grid gap-2 rounded-lg bg-gray-50 p-3 text-sm dark:bg-slate-950/60">
+          <div className="grid gap-2 rounded-lg border border-white/10 bg-slate-950/60 p-3 text-sm">
             {project.statusItems.map((item) => (
               <div key={`${project.id}-${item.label}`} className="flex items-center justify-between gap-3">
-                <span className="text-gray-500 dark:text-gray-400">{item.label}</span>
-                <span className="font-medium text-gray-900 dark:text-gray-100">{item.value}</span>
+                <span className="text-slate-500">{item.label}</span>
+                <span className="font-medium text-slate-100">{item.value}</span>
               </div>
             ))}
           </div>
