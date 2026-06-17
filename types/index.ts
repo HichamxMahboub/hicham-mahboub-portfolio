@@ -61,6 +61,9 @@ export interface ProjectItem {
     solution: string;
     result: string;
     keyFeatures: string[];
+    technicalDecisions?: string[];
+    validation?: string[];
+    ciStatus?: string;
     learned: string;
     techStack: string[];
     screenshots: string[];

@@ -44,6 +44,18 @@ export const projects: ProjectItem[] = [
       "Sample data and recruiter-facing documentation",
       "GitHub Actions CI",
     ],
+    technicalDecisions: [
+      "Separated the React dashboard, Node/Express API, MongoDB persistence, and Python analyzer so upload, storage, and analytics responsibilities stay explicit.",
+      "Kept the Python analysis deterministic and bounded to uploaded CSV/JSON files instead of relying on generated or external data.",
+      "Returned structured JSON from the analyzer so dashboard rendering, KPI review, anomaly checks, and PDF reporting share the same contract.",
+    ],
+    validation: [
+      "Upload validation before analysis",
+      "Deterministic KPI, anomaly, trend, and stability outputs",
+      "Sample data and recruiter-facing documentation",
+      "GitHub Actions CI listed in the project scope",
+    ],
+    ciStatus: "GitHub Actions CI configured",
     learned:
       "I learned how important it is to define stable input/output contracts, keep analytics deterministic, and treat execution boundaries as part of the product rather than an afterthought.",
     techStack: [
@@ -96,6 +108,16 @@ export const projects: ProjectItem[] = [
       "Role-based admin and back-office planning",
       "API documentation and delivery checklist",
     ],
+    technicalDecisions: [
+      "Defined roles, entities, and API boundaries before committing to screens because the platform has candidate, recruiter, company, offer, and admin flows.",
+      "Planned the Spring Boot and MongoDB backend around REST endpoints for profiles, companies, offers, applications, notifications, subscriptions, payments, and matching results.",
+      "Separated front-office, back-office, and mobile interface planning so each role can keep a clear navigation model.",
+    ],
+    validation: [
+      "API documentation and delivery checklist included in project scope",
+      "Docker setup listed for repeatable development",
+      "Next improvements include automated API tests for core matching flows",
+    ],
     learned:
       "I learned how important it is to define roles, entities, and API contracts before building screens, especially in a platform with several connected user journeys.",
     techStack: [
@@ -145,6 +167,18 @@ export const projects: ProjectItem[] = [
       "Dockerized development environment",
       "Unit tests and CI workflow",
     ],
+    technicalDecisions: [
+      "Designed a layered ASP.NET Core API around marketplace workflows, EF Core persistence, and PostgreSQL-backed entities.",
+      "Modelled role-based authorization for Admin, Vendor, and Customer flows with JWT authentication.",
+      "Kept Swagger, Docker, unit tests, and CI in the delivery scope so the backend can be reviewed beyond source code.",
+    ],
+    validation: [
+      "Unit tests and CI workflow included in project scope",
+      "Swagger/OpenAPI documentation for endpoint review",
+      "Dockerized development environment",
+      "Clear role, persistence, and marketplace workflow boundaries",
+    ],
+    ciStatus: "Unit tests and GitHub Actions CI workflow",
     learned:
       "I learned to approach marketplace work from the API contract first: clear layers, explicit roles, predictable persistence, and repeatable verification make the platform easier to test and extend.",
     techStack: [
@@ -201,6 +235,18 @@ export const projects: ProjectItem[] = [
       "Electron desktop packaging",
       "GitHub Actions CI",
     ],
+    technicalDecisions: [
+      "Kept student data local by using an Electron desktop workflow and localStorage persistence instead of a remote backend.",
+      "Built the analytics flow around Excel import validation, class/student/competency statistics, and Recharts visualizations.",
+      "Added French/Arabic i18n and printable reports so the tool fits teacher review and reporting workflows.",
+    ],
+    validation: [
+      "Excel import validation and score checks",
+      "Local-first data handling for student records",
+      "Printable reports for manual review",
+      "GitHub Actions CI listed in the project scope",
+    ],
+    ciStatus: "GitHub Actions CI configured",
     learned:
       "I learned to turn spreadsheet-based classroom data into reliable local analytics, with validation, clear indicators, bilingual UI support, and printable outputs that help teachers act on results without exposing student data to a remote service.",
     techStack: [
@@ -252,6 +298,16 @@ export const projects: ProjectItem[] = [
       "Dashboard cards for activity and priorities",
       "Responsive layout for scanning operational data",
     ],
+    technicalDecisions: [
+      "Organized the interface around channel filters, post states, campaign summaries, and task-style views for faster scanning.",
+      "Used dashboard cards and status-driven sections to make operational priorities visible without heavy navigation.",
+      "Kept the project focused on safe mock operational data instead of claiming live social platform integrations.",
+    ],
+    validation: [
+      "Responsive dashboard layout for scanning operational data",
+      "Clear status labels for planned, published, and review states",
+      "Next improvements include safe mock live demo data and README screenshots",
+    ],
     learned:
       "I learned how dashboard screens need clear hierarchy, concise labels, and consistent states so users can understand what needs attention quickly.",
     techStack: [
@@ -297,6 +353,16 @@ export const projects: ProjectItem[] = [
       "Workspace dashboard for active work",
       "Simple CRUD-oriented project structure",
     ],
+    technicalDecisions: [
+      "Structured the product around clients, missions, invoices, tasks, deadlines, and status filters instead of broad SaaS scope.",
+      "Kept the system CRUD-oriented so the data entities and dashboard screens remain easy to review.",
+      "Used dashboard summaries to make active work, deadlines, and payment states easier to scan.",
+    ],
+    validation: [
+      "Entity-driven workflow for clients, missions, tasks, and invoices",
+      "Next improvements include packaged release instructions and sample CSV exports",
+      "Dashboard-focused layout intended for repeated operational review",
+    ],
     learned:
       "I learned to prioritize everyday workflow clarity over unnecessary features, especially for tools that should reduce administrative friction.",
     techStack: [
@@ -341,6 +407,16 @@ export const projects: ProjectItem[] = [
       "Feature and value proposition blocks",
       "Clean component composition",
       "Accessible contrast and mobile spacing",
+    ],
+    technicalDecisions: [
+      "Built the page around a direct hero, feature sections, proof-oriented blocks, and CTA areas to keep the offer readable.",
+      "Prioritized responsive spacing, accessible contrast, and reusable component composition over decorative complexity.",
+      "Kept the project scoped as a front-end landing page concept without claiming production metrics.",
+    ],
+    validation: [
+      "Responsive hero and CTA sections",
+      "Accessible contrast and mobile spacing listed in project scope",
+      "Next improvements include accessibility checks and component tests",
     ],
     learned:
       "I learned that front-end polish depends on spacing, hierarchy, copy clarity, and responsive constraints as much as it depends on visual style.",
