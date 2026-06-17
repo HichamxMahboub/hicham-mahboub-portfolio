@@ -1,98 +1,159 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
 import { navItems } from "@/config/siteConfig";
 
+function isActiveRoute(pathname: string, href: string) {
+  if (href === "/") {
+    return pathname === "/";
+  }
+
+  return pathname.startsWith(href);
+}
+
 export default function Navbar() {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
-        };
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 12);
+    };
 
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    // navItems imported from data/siteConfig
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      return;
+    }
 
-    return (
-        <motion.nav
-            className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "border-b border-gray-200/80 bg-[#f5f3ee]/90 backdrop-blur-md dark:border-gray-700/60 dark:bg-gray-900/85" : "bg-transparent"}`}
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.5 }}
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isMobileMenuOpen]);
+
+  return (
+    <motion.header
+      className="sticky top-0 z-50 px-3 py-3 sm:px-4"
+      initial={{ y: -24, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.35, ease: "easeOut" }}
+    >
+      <nav
+        className={`mx-auto flex max-w-7xl items-center justify-between rounded-lg border border-white/10 bg-slate-950/78 px-4 py-3 text-white shadow-[0_18px_50px_rgba(2,6,23,0.18)] backdrop-blur-xl transition-all duration-300 sm:px-5 ${
+          isScrolled ? "bg-slate-950/88 shadow-[0_18px_60px_rgba(2,6,23,0.26)]" : ""
+        }`}
+        aria-label="Primary navigation"
+      >
+        <Link href="/" className="flex min-w-0 items-center gap-3" aria-label="Hicham Mahboub home">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white text-sm font-bold text-slate-950">
+            HM
+          </span>
+          <span className="hidden min-w-0 sm:block">
+            <span className="block truncate text-sm font-semibold text-white">
+              Hicham Mahboub
+            </span>
+            <span className="block truncate text-xs text-slate-400">
+              ISITD engineering student
+            </span>
+          </span>
+        </Link>
+
+        <div className="hidden items-center gap-1 rounded-lg border border-white/10 bg-white/[0.04] p-1 md:flex">
+          {navItems.map((item) => {
+            const active = isActiveRoute(pathname, item.href);
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={active ? "page" : undefined}
+                className={`rounded-md px-4 py-2 text-sm font-medium transition-colors ${
+                  active
+                    ? "bg-white text-slate-950"
+                    : "text-slate-300 hover:bg-white/10 hover:text-white"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </div>
+
+        <button
+          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/[0.06] text-white transition hover:bg-white/10 md:hidden"
+          onClick={() => setIsMobileMenuOpen((open) => !open)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-navigation"
+          type="button"
         >
-            <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-                <Link href="/" className="flex items-center gap-3">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-black text-white shadow-soft-lg dark:bg-white dark:text-black">
-                        <span className="text-base font-semibold">H</span>
-                    </div>
-                    <div className="hidden sm:block">
-                        <div className="text-sm font-semibold tracking-[-0.02em] text-gray-950 dark:text-white">
-                            Hicham Mahboub
-                        </div>
-                        <div className="text-xs text-gray-500">Full Stack Engineer</div>
-                    </div>
-                </Link>
+          <span className="space-y-1.5" aria-hidden="true">
+            <span
+              className={`block h-0.5 w-5 rounded-full bg-current transition-transform ${
+                isMobileMenuOpen ? "translate-y-2 rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-5 rounded-full bg-current transition-opacity ${
+                isMobileMenuOpen ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-5 rounded-full bg-current transition-transform ${
+                isMobileMenuOpen ? "-translate-y-2 -rotate-45" : ""
+              }`}
+            />
+          </span>
+        </button>
+      </nav>
 
-                <div className="hidden items-center gap-10 md:flex">
-                    {navItems.map((item) => (
-                        <Link
-                            key={item.href}
-                            href={item.href}
-                            className={`relative text-sm font-medium transition-colors ${isScrolled ? "text-gray-700 hover:text-gray-950 dark:text-gray-300 dark:hover:text-white" : "text-gray-800 hover:text-gray-950 dark:text-gray-200 dark:hover:text-white"}`}
-                        >
-                            {item.label}
-                            <span className="absolute -bottom-1 left-0 h-px w-0 bg-gray-950 transition-all duration-300 hover:w-full dark:bg-white" />
-                        </Link>
-                    ))}
-                </div>
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            id="mobile-navigation"
+            className="mx-auto mt-2 max-w-7xl overflow-hidden rounded-lg border border-white/10 bg-slate-950/95 p-2 text-white shadow-[0_18px_50px_rgba(2,6,23,0.24)] backdrop-blur-xl md:hidden"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.18 }}
+          >
+            <div className="grid gap-1">
+              {navItems.map((item) => {
+                const active = isActiveRoute(pathname, item.href);
 
-                <button
-                    className="inline-flex items-center justify-center rounded-full border border-gray-300/70 bg-white/70 p-2 text-gray-900 transition hover:bg-white dark:border-gray-700 dark:bg-gray-800/70 dark:text-white md:hidden"
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    aria-label="Toggle menu"
-                >
-                    <div className="space-y-1.5">
-                        <div
-                            className={`h-0.5 w-5 bg-current transition-all ${isMobileMenuOpen ? "translate-y-2 rotate-45" : ""}`}
-                        />
-                        <div
-                            className={`h-0.5 w-5 bg-current transition-all ${isMobileMenuOpen ? "opacity-0" : ""}`}
-                        />
-                        <div
-                            className={`h-0.5 w-5 bg-current transition-all ${isMobileMenuOpen ? "-translate-y-2 -rotate-45" : ""}`}
-                        />
-                    </div>
-                </button>
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    aria-current={active ? "page" : undefined}
+                    className={`rounded-md px-4 py-3 text-sm font-medium transition-colors ${
+                      active
+                        ? "bg-white text-slate-950"
+                        : "text-slate-300 hover:bg-white/10 hover:text-white"
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
             </div>
-
-            {isMobileMenuOpen && (
-                <motion.div
-                    className="border-t border-gray-200/80 bg-[#f5f3ee]/95 px-4 py-4 backdrop-blur-md dark:border-gray-700/60 dark:bg-gray-900/95 md:hidden"
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                >
-                    <div className="mx-auto flex max-w-7xl flex-col gap-4">
-                        {navItems.map((item) => (
-                            <Link
-                                key={item.href}
-                                href={item.href}
-                                className="text-base font-medium text-gray-800 hover:text-gray-950 dark:text-gray-300 dark:hover:text-white"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                {item.label}
-                            </Link>
-                        ))}
-                    </div>
-                </motion.div>
-            )}
-        </motion.nav>
-    );
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
+  );
 }

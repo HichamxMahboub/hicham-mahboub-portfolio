@@ -27,21 +27,21 @@ function getInitials(title: string) {
 function getCategoryTone(category: ProjectItem["category"]) {
   switch (category) {
     case "Backend API / Marketplace Platform":
-      return "from-emerald-950 via-neutral-900 to-zinc-950";
+      return "bg-emerald-950";
     case "Full-Stack Platforms":
-      return "from-slate-950 via-slate-800 to-cyan-900";
+      return "bg-slate-900";
     case "Simulation Analytics / Full-Stack Data Platform":
-      return "from-cyan-950 via-slate-900 to-sky-900";
+      return "bg-cyan-950";
     case "Education Analytics / Desktop App":
-      return "from-teal-950 via-slate-900 to-emerald-900";
+      return "bg-teal-950";
     case "Dashboards & Analytics":
-      return "from-blue-950 via-slate-900 to-indigo-900";
+      return "bg-blue-950";
     case "Digital Tools":
-      return "from-zinc-950 via-neutral-800 to-stone-900";
+      return "bg-zinc-900";
     case "Web Interfaces":
-      return "from-indigo-950 via-violet-900 to-slate-950";
+      return "bg-indigo-950";
     default:
-      return "from-gray-950 via-gray-900 to-gray-800";
+      return "bg-gray-950";
   }
 }
 
@@ -50,31 +50,31 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const initials = getInitials(project.title);
 
   return (
-    <Card className="group overflow-hidden rounded-[1.5rem] border-gray-200 transition-all hover:-translate-y-1 hover:shadow-xl dark:border-gray-800">
+    <Card className="group h-full overflow-hidden border-gray-200/80 bg-white/95 shadow-[0_18px_50px_rgba(2,6,23,0.08)] transition-transform duration-300 hover:-translate-y-1 dark:border-white/10 dark:bg-white/[0.04] dark:shadow-none">
       <Link href={`/projects/${project.id}`} className="block">
-        <div className={`relative h-64 overflow-hidden bg-gradient-to-br ${getCategoryTone(project.category)}`}>
+        <div className={`relative h-60 overflow-hidden ${getCategoryTone(project.category)}`}>
           {project.imageSrc ? (
             <Image
               src={project.imageSrc}
               alt={project.imageAlt ?? project.title}
               fill
-              className="object-cover opacity-80 mix-blend-screen transition-transform duration-500 group-hover:scale-105"
+              className="object-cover opacity-85 transition-transform duration-500 group-hover:scale-[1.03]"
               sizes="(max-width: 768px) 100vw, 33vw"
             />
           ) : (
             <div className="flex h-full items-center justify-center">
-              <div className="flex h-24 w-24 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-3xl font-semibold text-white shadow-2xl">
+              <div className="flex h-20 w-20 items-center justify-center rounded-lg border border-white/15 bg-white/10 text-2xl font-semibold text-white shadow-2xl">
                 {initials}
               </div>
             </div>
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-          <div className="absolute left-5 top-5">
-            <Badge variant="secondary" className="bg-white/90 text-gray-950">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/78 via-black/18 to-transparent" />
+          <div className="absolute left-4 top-4 max-w-[calc(100%-2rem)]">
+            <Badge variant="secondary" className="whitespace-normal rounded-md bg-white/92 text-gray-950">
               {project.category}
             </Badge>
           </div>
-          <div className="absolute bottom-5 left-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/15 bg-black/35 text-lg font-semibold text-white backdrop-blur">
+          <div className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-lg border border-white/15 bg-black/45 text-base font-semibold text-white backdrop-blur">
             {initials}
           </div>
         </div>
@@ -90,17 +90,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <CardContent className="space-y-4">
         <div className="flex flex-wrap gap-2">
           {project.techStack.slice(0, 4).map((tech) => (
-            <Badge key={`${project.id}-${tech}`} variant="outline">
+            <Badge key={`${project.id}-${tech}`} variant="outline" className="rounded-md">
               {tech}
             </Badge>
           ))}
           {project.techStack.length > 4 && (
-            <Badge variant="outline">+{project.techStack.length - 4}</Badge>
+            <Badge variant="outline" className="rounded-md">+{project.techStack.length - 4}</Badge>
           )}
         </div>
 
         {project.statusItems && project.statusItems.length > 0 && (
-          <div className="grid gap-2 rounded-2xl bg-gray-50 p-3 text-sm dark:bg-gray-900/60">
+          <div className="grid gap-2 rounded-lg bg-gray-50 p-3 text-sm dark:bg-slate-950/60">
             {project.statusItems.map((item) => (
               <div key={`${project.id}-${item.label}`} className="flex items-center justify-between gap-3">
                 <span className="text-gray-500 dark:text-gray-400">{item.label}</span>

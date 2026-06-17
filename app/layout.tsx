@@ -1,10 +1,21 @@
 import type { Metadata, Viewport } from "next";
+import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { siteConfig } from "@/config/siteConfig";
 
 const metadataBase = siteConfig.url ? new URL(siteConfig.url) : undefined;
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+  display: "swap",
+});
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase,
@@ -50,7 +61,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#000000",
+  themeColor: "#080a0f",
 };
 
 export default function RootLayout({
@@ -60,7 +71,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-[#f5f3ee] font-sans text-gray-900 dark:bg-gray-900 dark:text-white">
+      <body className={`${inter.variable} ${sora.variable} bg-[#080a0f] font-sans text-slate-100 antialiased`}>
         <Navbar />
         {children}
         <Footer />

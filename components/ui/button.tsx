@@ -22,17 +22,17 @@ export interface ButtonProps {
 }
 
 const baseStyles =
-  "inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-white";
+  "inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-offset-slate-950";
 
 const variantStyles: Record<ButtonVariant, string> = {
   default:
-    "bg-gray-950 text-white hover:bg-gray-800 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200",
+    "bg-slate-950 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-cyan-100",
   secondary:
-    "bg-gray-100 text-gray-950 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700",
+    "bg-slate-100 text-slate-950 hover:bg-slate-200 dark:bg-white/10 dark:text-white dark:hover:bg-white/15",
   outline:
-    "border border-gray-300 bg-transparent text-gray-950 hover:bg-gray-50 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800",
+    "border border-slate-300 bg-transparent text-slate-950 hover:bg-slate-50 dark:border-white/15 dark:text-white dark:hover:bg-white/10",
   ghost:
-    "bg-transparent text-gray-950 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-800",
+    "bg-transparent text-slate-950 hover:bg-slate-100 dark:text-white dark:hover:bg-white/10",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {

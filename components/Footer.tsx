@@ -1,98 +1,93 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { socialLinks, footerLinks } from "@/config/siteConfig";
+import { footerLinks, siteConfig, socialLinks } from "@/config/siteConfig";
+
+const positioning =
+  "2nd-year ESI engineering student focused on full-stack systems, backend APIs, analytics platforms, and digital transformation.";
 
 export default function Footer() {
-    const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
+  const emailHref = siteConfig.contactEmail ? `mailto:${siteConfig.contactEmail}` : null;
 
-    // socialLinks & footerLinks now imported from data/siteConfig
+  return (
+    <footer className="border-t border-white/10 bg-[#080a0f] text-slate-300">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.25fr_0.65fr_0.75fr_0.75fr]">
+          <div className="space-y-4">
+            <Link href="/" className="flex w-fit items-center gap-3" aria-label="Hicham Mahboub home">
+              <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white text-sm font-bold text-slate-950">
+                HM
+              </span>
+              <span>
+                <span className="block text-sm font-semibold text-white">
+                  Hicham Mahboub
+                </span>
+                <span className="block text-xs text-slate-500">
+                  Junior full-stack internship candidate
+                </span>
+              </span>
+            </Link>
+            <p className="max-w-md text-sm leading-6 text-slate-400">
+              {positioning}
+            </p>
+          </div>
 
-    return (
-        <footer className="border-t border-gray-200/80 bg-[#f5f3ee] dark:border-gray-700/60 dark:bg-gray-900">
-            <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-                <div className="grid gap-10 lg:grid-cols-[1.2fr,0.8fr,0.8fr]">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        viewport={{ once: true }}
-                        className="space-y-4"
-                    >
-                        <div className="flex items-center gap-3">
-                            <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-black text-white dark:bg-white dark:text-black">
-                                <span className="text-base font-semibold">H</span>
-                            </div>
-                            <span className="text-sm font-semibold tracking-[-0.02em] text-gray-950 dark:text-white">
-                                Hicham Mahboub
-                            </span>
-                        </div>
-                        <p className="max-w-md text-sm leading-6 text-gray-600 dark:text-gray-400">
-                            Built with precision and attention to detail.
-                        </p>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
-                        viewport={{ once: true }}
-                        className="space-y-4"
-                    >
-                        <h3 className="text-xs font-semibold uppercase tracking-[0.28em] text-gray-500 dark:text-gray-400">
-                            Connect
-                        </h3>
-                        <div className="flex flex-col gap-2">
-                            {socialLinks.map((link, idx) => (
-                                <a
-                                    key={`${link.label}-${idx}`}
-                                    href={link.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-sm text-gray-700 transition-colors hover:text-gray-950 dark:text-gray-400 dark:hover:text-white"
-                                >
-                                    {link.label}
-                                </a>
-                            ))}
-                        </div>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                        viewport={{ once: true }}
-                        className="space-y-4"
-                    >
-                        <h3 className="text-xs font-semibold uppercase tracking-[0.28em] text-gray-500 dark:text-gray-400">
-                            Legal
-                        </h3>
-                        <div className="flex flex-col gap-2">
-                            {footerLinks.map((link, idx) => (
-                                <Link
-                                    key={`${link.label}-${idx}`}
-                                    href={link.href}
-                                    className="text-sm text-gray-700 transition-colors hover:text-gray-950 dark:text-gray-400 dark:hover:text-white"
-                                >
-                                    {link.label}
-                                </Link>
-                            ))}
-                        </div>
-                    </motion.div>
-                </div>
-
-                <motion.div
-                    className="mt-12 border-t border-gray-200/80 pt-8 text-sm text-gray-600 dark:border-gray-700/60 dark:text-gray-400"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    viewport={{ once: true }}
+          <div className="space-y-4">
+            <h2 className="text-sm font-semibold text-white">Quick links</h2>
+            <div className="grid gap-2">
+              {footerLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-slate-400 transition-colors hover:text-white"
                 >
-                    <p>© {currentYear} Hicham Mahboub</p>
-                    <p>Built with precision and attention to detail.</p>
-                </motion.div>
+                  {link.label}
+                </Link>
+              ))}
             </div>
-        </footer>
-    );
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-sm font-semibold text-white">Contact</h2>
+            <div className="grid gap-2 text-sm">
+              {emailHref && (
+                <a className="break-all text-slate-400 transition-colors hover:text-white" href={emailHref}>
+                  {siteConfig.contactEmail}
+                </a>
+              )}
+              <Link className="text-slate-400 transition-colors hover:text-white" href="/contact">
+                Contact page
+              </Link>
+              <Link className="text-slate-400 transition-colors hover:text-white" href="/projects">
+                Projects
+              </Link>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-sm font-semibold text-white">Connect</h2>
+            <div className="grid gap-2">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="text-sm text-slate-400 transition-colors hover:text-white"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {currentYear} Hicham Mahboub. All rights reserved.</p>
+          <p>Built with Next.js, TypeScript, and Tailwind CSS.</p>
+        </div>
+      </div>
+    </footer>
+  );
 }
