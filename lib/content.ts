@@ -22,6 +22,47 @@ export type PortfolioContent = {
     education: EducationItem[];
 };
 
+
+const projectAssetPathMap: Record<string, string> = {
+    "/images/projects/smart-match.png": "/images/projects/smart-match.webp",
+    "/images/projects/competency-analytics-assistant.png":
+        "/images/projects/competency-analytics-assistant.webp",
+    "/images/projects/social-media-command-center.png":
+        "/images/projects/social-media-command-center.webp",
+    "/images/projects/freelance-manager.png": "/images/projects/freelance-manager.webp",
+    "/images/projects/nova-ai-landing-page.png":
+        "/images/projects/nova-ai-landing-page.webp",
+    "/images/projects/markethub.png": "/images/projects/markethub-backend-preview.svg",
+};
+
+function normalizeProjectAssetPath(path: string | null | undefined) {
+    if (!path) {
+        return undefined;
+    }
+
+    return projectAssetPathMap[path] ?? path;
+}
+
+function normalizeProjectImageSrc(row: ProjectRow) {
+    const normalized = normalizeProjectAssetPath(row.imageSrc);
+
+    if (normalized) {
+        return normalized;
+    }
+
+    if (row.slug === "markethub") {
+        return "/images/projects/markethub-backend-preview.svg";
+    }
+
+    return undefined;
+}
+
+function normalizeProjectScreenshots(screenshots: string[] | null | undefined) {
+    return (screenshots ?? [])
+        .map((screenshot) => normalizeProjectAssetPath(screenshot))
+        .filter((screenshot): screenshot is string => Boolean(screenshot));
+}
+
 type ProjectRow = {
     id: number;
     title: string;
@@ -30,8 +71,8 @@ type ProjectRow = {
     category: ProjectItem["category"];
     themeKey: string | null;
     bgColor: string;
-    imageSrc: string;
-    imageAlt: string;
+    imageSrc: string | null;
+    imageAlt: string | null;
     description: string;
     problem: string;
     solution: string;
@@ -55,8 +96,8 @@ function toProjectItem(row: ProjectRow): ProjectItem {
         category: row.category,
         themeKey: row.themeKey ?? undefined,
         bgColor: row.bgColor,
-        imageSrc: row.imageSrc,
-        imageAlt: row.imageAlt,
+        imageSrc: normalizeProjectImageSrc(row),
+        imageAlt: row.imageAlt ?? undefined,
         description: row.description,
         problem: row.problem,
         solution: row.solution,
@@ -64,7 +105,7 @@ function toProjectItem(row: ProjectRow): ProjectItem {
         keyFeatures: row.keyFeatures ?? [],
         learned: row.learned,
         techStack: row.techStack ?? [],
-        screenshots: row.screenshots ?? [],
+        screenshots: normalizeProjectScreenshots(row.screenshots),
         nextImprovements: row.nextImprovements ?? [],
         statusItems: row.statusItems ?? [],
         liveLink: row.liveLink ?? undefined,

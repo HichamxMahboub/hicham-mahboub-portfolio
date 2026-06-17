@@ -241,7 +241,7 @@ export default async function ProjectDetailPage({
 
             <div className="space-y-4">
               <div className="overflow-hidden rounded-lg border border-white/10 bg-white/[0.04] p-3 shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
-                <div className={`relative aspect-[16/10] overflow-hidden rounded-lg ${project.bgColor}`}>
+                <div className={`relative aspect-video overflow-hidden rounded-lg ${project.bgColor}`}>
                   {project.imageSrc ? (
                     <Image
                       src={project.imageSrc}
@@ -433,7 +433,7 @@ export default async function ProjectDetailPage({
             {relatedProjects.map((relatedProject) => (
               <Card key={relatedProject.id} className="group overflow-hidden border-white/10 bg-white/[0.04] text-white">
                 <Link href={`/projects/${relatedProject.id}`} className="block">
-                  <div className={`relative h-52 overflow-hidden ${relatedProject.bgColor}`}>
+                  <div className={`relative aspect-video overflow-hidden ${relatedProject.bgColor}`}>
                     {relatedProject.imageSrc ? (
                       <Image
                         src={relatedProject.imageSrc}

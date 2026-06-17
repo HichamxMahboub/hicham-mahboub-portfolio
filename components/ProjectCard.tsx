@@ -52,13 +52,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Card className="group h-full overflow-hidden border-gray-200/80 bg-white/95 shadow-[0_18px_50px_rgba(2,6,23,0.08)] transition-transform duration-300 hover:-translate-y-1 dark:border-white/10 dark:bg-white/[0.04] dark:shadow-none">
       <Link href={`/projects/${project.id}`} className="block">
-        <div className={`relative h-60 overflow-hidden ${getCategoryTone(project.category)}`}>
+        <div className={`relative aspect-video overflow-hidden ${getCategoryTone(project.category)}`}>
           {project.imageSrc ? (
             <Image
               src={project.imageSrc}
               alt={project.imageAlt ?? project.title}
               fill
-              className="object-cover opacity-85 transition-transform duration-500 group-hover:scale-[1.03]"
+              className="object-cover opacity-90 transition-transform duration-500 group-hover:scale-[1.03]"
               sizes="(max-width: 768px) 100vw, 33vw"
             />
           ) : (

@@ -23,7 +23,7 @@ const projects = [
     themeKey: "cyan",
     bgColor: "bg-cyan-950",
     imageSrc: "/images/projects/smartsim-analytics.svg",
-    imageAlt: "SmartSim Analytics dashboard preview",
+    imageAlt: "SmartSim Analytics simulation analytics preview showing CSV/JSON input, Python analysis, dashboard output, and reporting",
     description:
       "SmartSim Analytics is a full-stack simulation analytics platform built with React, Node/Express, MongoDB, and Python. It ingests CSV/JSON simulation exports, runs deterministic Python analysis for KPIs, anomaly detection, trend and stability checks, and presents results through a dashboard with charts and PDF reporting.",
     problem:
@@ -81,8 +81,8 @@ const projects = [
     category: "Full-Stack Platforms",
     themeKey: "slate",
     bgColor: "bg-slate-950",
-    imageSrc: "/images/projects/smart-match.png",
-    imageAlt: "Smart Match recruitment analytics dashboard",
+    imageSrc: "/images/projects/smart-match.webp",
+    imageAlt: "Smart Match recruitment platform screenshot showing candidate and recruiter dashboard screens",
     description:
       "Smart Match is an academic full-stack platform designed around internship and freelance matching. It shows how I think through roles, data models, API boundaries, and recruiter/candidate workflows.",
     problem:
@@ -109,7 +109,7 @@ const projects = [
       "Firebase Auth",
       "Swagger",
     ],
-    screenshots: ["/images/projects/smart-match.png"],
+    screenshots: ["/images/projects/smart-match.webp"],
     nextImprovements: [
       "Add a live deployment for the main web interface",
       "Improve README with screenshots and setup flow",
@@ -127,7 +127,8 @@ const projects = [
     category: "Backend API / Marketplace Platform",
     themeKey: "neutral",
     bgColor: "bg-neutral-950",
-    imageAlt: "MarketHub backend API project",
+    imageSrc: "/images/projects/markethub-backend-preview.svg",
+    imageAlt: "MarketHub backend architecture preview for ASP.NET Core, Swagger, PostgreSQL, JWT, Docker, and CI",
     description:
       "MarketHub is a professional marketplace backend API built with .NET 8, ASP.NET Core, Entity Framework Core, PostgreSQL, JWT authentication, Swagger, Docker, unit tests, and GitHub Actions CI.",
     problem:
@@ -180,8 +181,8 @@ const projects = [
     category: "Education Analytics / Desktop App",
     themeKey: "blue",
     bgColor: "bg-blue-950",
-    imageSrc: "/images/projects/competency-analytics-assistant.png",
-    imageAlt: "Assistant d'Analyse des Compétences dashboard",
+    imageSrc: "/images/projects/competency-analytics-assistant.webp",
+    imageAlt: "Assistant d'Analyse des Competences analytics dashboard screenshot with Excel import and class competency reporting",
     description:
       "Assistant d'Analyse des Compétences is a local-first React, TypeScript, Vite, and Electron analytics assistant for teachers. It imports Excel competency reports, validates scores, calculates class, student, and competency statistics, visualizes performance with Recharts, supports French/Arabic i18n, and generates printable reports while keeping student data local.",
     problem:
@@ -215,7 +216,7 @@ const projects = [
       "localStorage",
       "GitHub Actions",
     ],
-    screenshots: ["/images/projects/competency-analytics-assistant.png"],
+    screenshots: ["/images/projects/competency-analytics-assistant.webp"],
     nextImprovements: [
       "Publish the live demo when the public preview is ready",
       "Prepare the downloadable desktop release when packaging is ready",
@@ -237,8 +238,8 @@ const projects = [
     category: "Dashboards & Analytics",
     themeKey: "slate",
     bgColor: "bg-gray-950",
-    imageSrc: "/images/projects/social-media-command-center.png",
-    imageAlt: "Social media command centre dashboard",
+    imageSrc: "/images/projects/social-media-command-center.webp",
+    imageAlt: "Social Media Command Center dashboard screenshot with content planning and channel status panels",
     description:
       "Social Media Command Center is a dashboard-focused project for organizing content operations across multiple channels and campaign states.",
     problem:
@@ -264,7 +265,7 @@ const projects = [
       "Charts",
       "Workflow Design",
     ],
-    screenshots: ["/images/projects/social-media-command-center.png"],
+    screenshots: ["/images/projects/social-media-command-center.webp"],
     nextImprovements: [
       "Add a live demo with safe mock social data",
       "Improve API documentation for auth and analytics endpoints",
@@ -282,8 +283,8 @@ const projects = [
     category: "Digital Tools",
     themeKey: "neutral",
     bgColor: "bg-zinc-950",
-    imageSrc: "/images/projects/freelance-manager.png",
-    imageAlt: "Freelance management dashboard",
+    imageSrc: "/images/projects/freelance-manager.webp",
+    imageAlt: "Freelance Manager dashboard screenshot with clients, missions, invoices, and task status",
     description:
       "Freelance Manager is a practical management tool for independent work, built around the daily needs of tracking missions, clients, deliverables, and payments.",
     problem:
@@ -309,7 +310,7 @@ const projects = [
       "CRUD",
       "Dashboard Design",
     ],
-    screenshots: ["/images/projects/freelance-manager.png"],
+    screenshots: ["/images/projects/freelance-manager.webp"],
     nextImprovements: [
       "Add packaged release instructions for desktop users",
       "Improve README with screenshots of client and KPI screens",
@@ -327,8 +328,8 @@ const projects = [
     category: "Web Interfaces",
     themeKey: "blue",
     bgColor: "bg-indigo-950",
-    imageSrc: "/images/projects/nova-ai-landing-page.png",
-    imageAlt: "Nova AI assistant landing page",
+    imageSrc: "/images/projects/nova-ai-landing-page.webp",
+    imageAlt: "Nova AI Landing Page screenshot with hero, product messaging, and responsive sections",
     description:
       "Nova AI Landing Page is a front-end project focused on building a polished, responsive product page for an AI-themed software offer.",
     problem:
@@ -353,7 +354,7 @@ const projects = [
       "Responsive Design",
       "UI Components",
     ],
-    screenshots: ["/images/projects/nova-ai-landing-page.png"],
+    screenshots: ["/images/projects/nova-ai-landing-page.webp"],
     nextImprovements: [
       "Add more real content sections instead of generic landing-page copy",
       "Improve accessibility checks for interactive sections",
