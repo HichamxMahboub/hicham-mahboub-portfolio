@@ -13,6 +13,32 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#080a0f] text-slate-300">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mb-10 rounded-lg border border-cyan-300/20 bg-cyan-300/10 p-5 sm:flex sm:items-center sm:justify-between sm:gap-6 sm:p-6">
+          <div>
+            <p className="text-sm font-semibold text-white">
+              Available for junior full-stack internship opportunities.
+            </p>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">
+              Interested in backend APIs, full-stack systems, dashboards, analytics tools, and digital transformation projects.
+            </p>
+          </div>
+          <div className="mt-5 flex flex-col gap-3 sm:mt-0 sm:flex-row">
+            <Link
+              href="/contact"
+              className="inline-flex h-10 items-center justify-center rounded-lg bg-white px-5 text-sm font-medium text-slate-950 transition-colors hover:bg-cyan-100"
+            >
+              Contact Me
+            </Link>
+            <a
+              href={siteConfig.cvPath}
+              download
+              className="inline-flex h-10 items-center justify-center rounded-lg border border-white/15 px-5 text-sm font-medium text-white transition-colors hover:bg-white/10"
+            >
+              Download CV
+            </a>
+          </div>
+        </div>
+
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.25fr_0.65fr_0.75fr_0.75fr]">
           <div className="space-y-4">
             <Link href="/" className="flex w-fit items-center gap-3" aria-label="Hicham Mahboub home">
@@ -59,6 +85,9 @@ export default function Footer() {
               <Link className="text-slate-400 transition-colors hover:text-white" href="/contact">
                 Contact page
               </Link>
+              <a className="text-slate-400 transition-colors hover:text-white" href={siteConfig.cvPath} download>
+                Download CV
+              </a>
               <Link className="text-slate-400 transition-colors hover:text-white" href="/projects">
                 Projects
               </Link>

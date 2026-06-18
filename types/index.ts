@@ -88,7 +88,7 @@ export interface SiteConfig {
     name: string;
     title: string;
     description: string;
-    url: string | null;
+    url: string;
     contactEmail: string | null;
     academicEmail: string;
     personalEmail: string;

@@ -5,7 +5,8 @@
 
 import type { NavItem, SocialLink, FooterLink, SiteConfig } from "@/types";
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim() || null;
+export const productionSiteUrl = "https://portfolio-blush-two-70.vercel.app";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim() || productionSiteUrl;
 export const academicEmail = "hicham.mahboub@esi.ac.ma";
 export const personalEmail = "hichammahboub45@gmail.com";
 export const phone = "+212 621 960 921";
@@ -37,9 +38,9 @@ export const footerLinks: FooterLink[] = [
 
 export const siteConfig: SiteConfig = {
   name: "Hicham Mahboub",
-  title: "Hicham Mahboub - Full Stack Engineer",
+  title: "Hicham Mahboub - Junior Full-Stack Internship Portfolio",
   description:
-    "Information Systems and Digital Transformation Engineering student seeking an internship as a junior full-stack developer.",
+    "2nd-year ESI engineering student in Information Systems and Digital Transformation, building full-stack, backend API, dashboard, and analytics projects for junior internship opportunities.",
   url: siteUrl,
   contactEmail,
   academicEmail,

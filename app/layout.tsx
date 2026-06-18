@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { siteConfig } from "@/config/siteConfig";
 
-const metadataBase = siteConfig.url ? new URL(siteConfig.url) : undefined;
+const metadataBase = new URL(siteConfig.url);
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-geist-sans",
@@ -26,35 +26,61 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: [
     "Hicham Mahboub",
-    "full stack engineer",
-    "information systems engineering",
-    "web development",
+    "junior full-stack internship",
+    "ESI engineering student",
+    "ISITD",
+    "Information Systems and Digital Transformation",
+    "full-stack developer portfolio",
+    "backend API portfolio",
+    "dashboard portfolio",
+    "data analytics portfolio",
     "React",
     "Next.js",
+    "TypeScript",
+    "ASP.NET Core",
     "Spring Boot",
+    "Node.js",
+    "PostgreSQL",
+    "MongoDB",
     "portfolio",
   ],
+  applicationName: siteConfig.name,
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
+  publisher: siteConfig.name,
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
-    url: "/",
+    url: siteConfig.url,
     siteName: siteConfig.name,
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/images/My-pdp.png",
+        alt: "Hicham Mahboub portfolio profile image",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
+    images: ["/images/My-pdp.png"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
