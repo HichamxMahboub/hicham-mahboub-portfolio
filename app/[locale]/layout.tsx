@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: LocaleLayoutProps): Promise<M
   return {
     alternates: {
       canonical: `/${locale}`,
-      languages: { en: "/en", fr: "/fr" },
+      languages: { en: "/en", fr: "/fr", "x-default": "/en" },
     },
     openGraph: { locale: isFrench ? "fr_FR" : "en_US" },
   };

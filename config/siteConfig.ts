@@ -5,13 +5,13 @@
 
 import type { NavItem, SocialLink, FooterLink, SiteConfig } from "@/types";
 
-export const productionSiteUrl = "https://portfolio-blush-two-70.vercel.app";
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim() || productionSiteUrl;
+export const productionSiteUrl = "https://www.hichammahboub.live";
+export const siteUrl = productionSiteUrl;
 export const academicEmail = "hicham.mahboub@esi.ac.ma";
 export const personalEmail = "hichammahboub45@gmail.com";
 export const phone = "+212 621 960 921";
 export const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || academicEmail;
-export const linkedinUrl = process.env.NEXT_PUBLIC_LINKEDIN_URL?.trim() || null;
+export const linkedinUrl = "https://www.linkedin.com/in/hicham-mahboub-b590082b1/";
 export const githubUrl = "https://github.com/HichamxMahboub";
 export const cvPath = "/Hicham-Mahboub-CV.pdf";
 
