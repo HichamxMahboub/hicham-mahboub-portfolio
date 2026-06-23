@@ -1,8 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Sora } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { siteConfig } from "@/config/siteConfig";
 
 const metadataBase = new URL(siteConfig.url);
@@ -48,9 +46,6 @@ export const metadata: Metadata = {
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
@@ -98,9 +93,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${sora.variable} bg-[#080a0f] font-sans text-slate-100 antialiased`}>
-        <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );

@@ -1,15 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import type { ProjectItem } from "@/types";
+import { useLocale } from "@/components/LocaleProvider";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { localizeProjectSummary } from "@/lib/projectTranslations";
+import { localizePath } from "@/src/i18n/dictionaries";
 
 interface ProjectCardProps {
   project: ProjectItem;
@@ -46,17 +45,19 @@ function getCategoryTone(category: ProjectItem["category"]) {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const { locale, messages } = useLocale();
+  const localizedProject = localizeProjectSummary(project, locale);
   const hasProjectLinks = Boolean(project.liveLink || project.githubLink);
-  const initials = getInitials(project.title);
+  const initials = getInitials(localizedProject.title);
 
   return (
     <Card className="group h-full overflow-hidden border-white/10 bg-white/[0.04] transition-transform duration-300 hover:-translate-y-1">
-      <Link href={`/projects/${project.id}`} className="block">
-        <div className={`relative aspect-video overflow-hidden ${getCategoryTone(project.category)}`}>
+      <Link href={localizePath(locale, "/projects/" + project.id)} className="block">
+        <div className={"relative aspect-video overflow-hidden " + getCategoryTone(project.category)}>
           {project.imageSrc ? (
             <Image
               src={project.imageSrc}
-              alt={project.imageAlt ?? project.title}
+              alt={project.imageAlt ?? localizedProject.title}
               fill
               className="object-cover opacity-90 transition-transform duration-500 group-hover:scale-[1.03]"
               sizes="(max-width: 768px) 100vw, 33vw"
@@ -71,7 +72,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <div className="absolute inset-0 bg-gradient-to-t from-black/78 via-black/18 to-transparent" />
           <div className="absolute left-4 top-4 max-w-[calc(100%-2rem)]">
             <Badge variant="default" className="whitespace-normal rounded-md">
-              {project.category}
+              {localizedProject.category}
             </Badge>
           </div>
           <div className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-lg border border-white/15 bg-black/45 text-base font-semibold text-white backdrop-blur">
@@ -81,16 +82,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </Link>
 
       <CardHeader className="space-y-3">
-        <Link href={`/projects/${project.id}`} className="block space-y-3">
-          <CardTitle className="text-xl leading-tight">{project.title}</CardTitle>
-          <CardDescription className="leading-6 text-slate-400">{project.shortDescription}</CardDescription>
+        <Link href={localizePath(locale, "/projects/" + project.id)} className="block space-y-3">
+          <CardTitle className="text-xl leading-tight">{localizedProject.title}</CardTitle>
+          <CardDescription className="leading-6 text-slate-400">{localizedProject.shortDescription}</CardDescription>
         </Link>
       </CardHeader>
 
       <CardContent className="space-y-4">
         <div className="flex flex-wrap gap-2">
           {project.techStack.slice(0, 4).map((tech) => (
-            <Badge key={`${project.id}-${tech}`} variant="outline" className="rounded-md">
+            <Badge key={project.id + "-" + tech} variant="outline" className="rounded-md">
               {tech}
             </Badge>
           ))}
@@ -102,7 +103,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         {project.statusItems && project.statusItems.length > 0 && (
           <div className="grid gap-2 rounded-lg border border-white/10 bg-slate-950/60 p-3 text-sm">
             {project.statusItems.map((item) => (
-              <div key={`${project.id}-${item.label}`} className="flex items-center justify-between gap-3">
+              <div key={project.id + "-" + item.label} className="flex items-center justify-between gap-3">
                 <span className="text-slate-500">{item.label}</span>
                 <span className="font-medium text-slate-100">{item.value}</span>
               </div>
@@ -114,7 +115,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <div className="flex flex-wrap gap-3">
             {project.liveLink && (
               <Button href={project.liveLink} variant="outline" size="sm">
-                Live Demo
+                {messages.projectCard.liveDemo}
               </Button>
             )}
             {project.githubLink && (

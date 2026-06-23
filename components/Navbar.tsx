@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { navItems } from "@/config/siteConfig";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useLocale } from "@/components/LocaleProvider";
+import { localizePath } from "@/src/i18n/dictionaries";
 
 function isActiveRoute(pathname: string, href: string) {
   if (href === "/") {
@@ -16,6 +18,13 @@ function isActiveRoute(pathname: string, href: string) {
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { locale, messages } = useLocale();
+  const navItems = [
+    { label: messages.nav.home, href: localizePath(locale, "/") },
+    { label: messages.nav.about, href: localizePath(locale, "/about") },
+    { label: messages.nav.projects, href: localizePath(locale, "/projects") },
+    { label: messages.nav.contact, href: localizePath(locale, "/contact") },
+  ];
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -57,7 +66,7 @@ export default function Navbar() {
         }`}
         aria-label="Primary navigation"
       >
-        <Link href="/" className="flex min-w-0 items-center gap-3" aria-label="Hicham Mahboub home">
+        <Link href={localizePath(locale, "/")} className="flex min-w-0 items-center gap-3" aria-label="Hicham Mahboub home">
           <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white text-sm font-bold text-slate-950">
             HM
           </span>
@@ -66,7 +75,7 @@ export default function Navbar() {
               Hicham Mahboub
             </span>
             <span className="block truncate text-xs text-slate-400">
-              ISITD engineering student
+              {messages.nav.role}
             </span>
           </span>
         </Link>
@@ -92,10 +101,16 @@ export default function Navbar() {
           })}
         </div>
 
+        <div className="hidden md:block">
+          <LanguageSwitcher />
+        </div>
+        <div className="md:hidden">
+          <LanguageSwitcher />
+        </div>
         <button
           className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/[0.06] text-white transition hover:bg-white/10 md:hidden"
           onClick={() => setIsMobileMenuOpen((open) => !open)}
-          aria-label="Toggle navigation menu"
+          aria-label={isMobileMenuOpen ? messages.nav.closeMenu : messages.nav.menu}
           aria-expanded={isMobileMenuOpen}
           aria-controls="mobile-navigation"
           type="button"

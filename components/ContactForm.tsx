@@ -1,12 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import { useLocale } from "@/components/LocaleProvider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { contactEmail, socialLinks } from "@/config/siteConfig";
 
 export default function ContactForm() {
+  const { messages } = useLocale();
+  const copy = messages.contactForm;
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,7 +33,7 @@ export default function ContactForm() {
     e.preventDefault();
 
     if (!contactEmail) {
-      setSubmitMessage("Contact email is not configured yet. Please use LinkedIn or GitHub.");
+      setSubmitMessage(copy.noEmailMessage);
       return;
     }
 
@@ -45,7 +48,7 @@ ${formData.message}`,
 
     window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
     setFormData({ name: "", email: "", subject: "", message: "" });
-    setSubmitMessage("Your email app should open with the message ready to send.");
+    setSubmitMessage(copy.sentMessage);
     setIsSubmitting(false);
   };
 
@@ -53,9 +56,9 @@ ${formData.message}`,
     return (
       <div className="space-y-5">
         <div>
-          <h2 className="text-2xl font-semibold text-white">Contact form unavailable</h2>
+          <h2 className="text-2xl font-semibold text-white">{copy.unavailableTitle}</h2>
           <p className="mt-3 text-sm leading-6 text-slate-400">
-            Please reach out through one of the available social links.
+            {copy.unavailableDescription}
           </p>
         </div>
         <div className="flex flex-wrap gap-3">
@@ -75,8 +78,8 @@ ${formData.message}`,
         <Input
           type="text"
           name="name"
-          aria-label="Your name"
-          placeholder="Your Name"
+          aria-label={copy.nameLabel}
+          placeholder={copy.namePlaceholder}
           value={formData.name}
           onChange={handleChange}
           required
@@ -84,8 +87,8 @@ ${formData.message}`,
         <Input
           type="email"
           name="email"
-          aria-label="Your email"
-          placeholder="Your Email"
+          aria-label={copy.emailLabel}
+          placeholder={copy.emailPlaceholder}
           value={formData.email}
           onChange={handleChange}
           required
@@ -95,8 +98,8 @@ ${formData.message}`,
       <Input
         type="text"
         name="subject"
-        aria-label="Email subject"
-        placeholder="Subject"
+        aria-label={copy.subjectLabel}
+        placeholder={copy.subjectPlaceholder}
         value={formData.subject}
         onChange={handleChange}
         required
@@ -104,8 +107,8 @@ ${formData.message}`,
 
       <Textarea
         name="message"
-        aria-label="Your message"
-        placeholder="Your Message"
+        aria-label={copy.messageLabel}
+        placeholder={copy.messagePlaceholder}
         rows={6}
         value={formData.message}
         onChange={handleChange}
@@ -124,7 +127,7 @@ ${formData.message}`,
         size="lg"
         disabled={isSubmitting}
       >
-        {isSubmitting ? "Opening..." : "Send Message"}
+        {isSubmitting ? copy.opening : copy.send}
       </Button>
     </form>
   );
