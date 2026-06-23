@@ -9,5 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
     },
     sitemap,
+    host: "https://www.hichammahboub.live",
   };
 }

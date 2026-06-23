@@ -52,7 +52,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <Card className="group h-full overflow-hidden border-white/10 bg-white/[0.04] transition-transform duration-300 hover:-translate-y-1">
-      <Link href={localizePath(locale, "/projects/" + project.id)} className="block">
+      <Link href={localizePath(locale, "/projects/" + project.slug)} className="block">
         <div className={"relative aspect-video overflow-hidden " + getCategoryTone(project.category)}>
           {project.imageSrc ? (
             <Image
@@ -82,7 +82,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </Link>
 
       <CardHeader className="space-y-3">
-        <Link href={localizePath(locale, "/projects/" + project.id)} className="block space-y-3">
+        <Link href={localizePath(locale, "/projects/" + project.slug)} className="block space-y-3">
           <CardTitle className="text-xl leading-tight">{localizedProject.title}</CardTitle>
           <CardDescription className="leading-6 text-slate-400">{localizedProject.shortDescription}</CardDescription>
         </Link>

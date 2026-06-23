@@ -42,7 +42,7 @@ export interface EducationItem {
 export interface ProjectItem {
     id: number;
     title: string;
-    slug?: string;
+    slug: string;
     shortDescription: string;
     category:
         | "Backend API / Marketplace Platform"

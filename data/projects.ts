@@ -1,5 +1,19 @@
 import type { ProjectItem } from "@/types";
 
+/**
+ * Public, stable project URLs. These remain independent from database IDs so
+ * project links can stay indexable if records are reordered in the future.
+ */
+export const projectSlugsById: Record<number, string> = {
+  1: "interlance",
+  2: "markethub",
+  3: "competency-analytics",
+  4: "social-media-command-center",
+  5: "freelance-manager",
+  6: "nova-ai-landing",
+  7: "smartsim-analytics",
+};
+
 export const projectCategories = [
   "View All",
   "Backend API / Marketplace Platform",
@@ -86,7 +100,7 @@ export const projects: ProjectItem[] = [
   {
     id: 1,
     title: "Smart Match - Internship & Freelance Matching Platform",
-    slug: "smart-match-internship-freelance-platform",
+    slug: "interlance",
     shortDescription:
       "A full-stack matching platform for candidates, recruiters, companies, offers, applications, notifications, and AI-assisted matching results.",
     category: "Full-Stack Platforms",
@@ -208,13 +222,13 @@ export const projects: ProjectItem[] = [
   {
     id: 3,
     title: "Assistant d'Analyse des Compétences",
-    slug: "competency-analytics-assistant",
+    slug: "competency-analytics",
     shortDescription:
       "A local-first analytics assistant for teachers to import Excel competency reports, analyze class and student performance, identify strongest and weakest competencies, and generate printable reports with French/Arabic support.",
     category: "Education Analytics / Desktop App",
     themeKey: "blue",
     bgColor: "bg-blue-950",
-    imageSrc: "/images/projects/competency-analytics-assistant.webp",
+    imageSrc: "/images/projects/competency-analytics.webp",
     imageAlt: "Assistant d'Analyse des Competences analytics dashboard screenshot with Excel import and class competency reporting",
     description:
       "Assistant d'Analyse des Compétences is a local-first React, TypeScript, Vite, and Electron analytics assistant for teachers. It imports Excel competency reports, validates scores, calculates class, student, and competency statistics, visualizes performance with Recharts, supports French/Arabic i18n, and generates printable reports while keeping student data local.",
@@ -261,7 +275,7 @@ export const projects: ProjectItem[] = [
       "localStorage",
       "GitHub Actions",
     ],
-    screenshots: ["/images/projects/competency-analytics-assistant.webp"],
+    screenshots: ["/images/projects/competency-analytics.webp"],
     nextImprovements: [
       "Publish the live demo when the public preview is ready",
       "Prepare the downloadable desktop release when packaging is ready",
@@ -387,13 +401,13 @@ export const projects: ProjectItem[] = [
   {
     id: 6,
     title: "Nova AI Landing Page",
-    slug: "nova-ai-landing-page",
+    slug: "nova-ai-landing",
     shortDescription:
       "A clean responsive landing page concept for an AI product, focused on visual hierarchy, messaging, and conversion-oriented sections.",
     category: "Web Interfaces",
     themeKey: "blue",
     bgColor: "bg-indigo-950",
-    imageSrc: "/images/projects/nova-ai-landing-page.webp",
+    imageSrc: "/images/projects/nova-ai-landing.webp",
     imageAlt: "Nova AI Landing Page screenshot with hero, product messaging, and responsive sections",
     description:
       "Nova AI Landing Page is a front-end project focused on building a polished, responsive product page for an AI-themed software offer.",
@@ -429,7 +443,7 @@ export const projects: ProjectItem[] = [
       "Responsive Design",
       "UI Components",
     ],
-    screenshots: ["/images/projects/nova-ai-landing-page.webp"],
+    screenshots: ["/images/projects/nova-ai-landing.webp"],
     nextImprovements: [
       "Add more real content sections instead of generic landing-page copy",
       "Improve accessibility checks for interactive sections",
@@ -437,6 +451,5 @@ export const projects: ProjectItem[] = [
       "Add a small component test suite for key UI sections",
     ],
     githubLink: "https://github.com/HichamxMahboub/nova-ai-landing",
-    liveLink: "https://nova-ai-landing-ten.vercel.app",
   },
 ];
