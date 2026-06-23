@@ -60,17 +60,17 @@ export function absoluteUrl(path: string): string {
 
 export function localizedAlternates(locale: RouteLocale, path = ""): Metadata["alternates"] {
   return {
-    canonical: localePath(locale, path),
+    canonical: absoluteUrl(localePath(locale, path)),
     languages: {
-      en: localePath("en", path),
-      fr: localePath("fr", path),
-      "x-default": localePath("en", path),
+      en: absoluteUrl(localePath("en", path)),
+      fr: absoluteUrl(localePath("fr", path)),
+      "x-default": absoluteUrl(localePath("en", path)),
     },
   };
 }
 
 export function createPageMetadata(locale: RouteLocale, path: string, copy: PageCopy): Metadata {
-  const url = localePath(locale, path);
+  const url = absoluteUrl(localePath(locale, path));
   const alternateLocale = locale === "en" ? "fr_FR" : "en_US";
 
   return {
@@ -106,7 +106,7 @@ export function profileSchema(locale: RouteLocale) {
       {
         "@type": "WebSite",
         "@id": `${siteUrl}/#website`,
-        url: siteUrl,
+        url: absoluteUrl("/en"),
         name: "Hicham Mahboub",
         inLanguage: ["en", "fr"],
       },

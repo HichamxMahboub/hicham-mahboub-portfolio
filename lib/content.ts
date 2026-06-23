@@ -8,6 +8,7 @@ import type {
 import {
     projects as fallbackProjects,
     projectCategories,
+    projectSlugsById,
 } from "@/data/projects";
 import {
     skills as fallbackSkills,
@@ -91,7 +92,7 @@ function toProjectItem(row: ProjectRow): ProjectItem {
     return {
         id: row.id,
         title: row.title,
-        slug: row.slug ?? undefined,
+        slug: projectSlugsById[row.id] ?? row.slug ?? `project-${row.id}`,
         shortDescription: row.shortDescription,
         category: row.category,
         themeKey: row.themeKey ?? undefined,
@@ -171,6 +172,11 @@ export async function getFeaturedProjects(limit = 3) {
 export async function getProjectById(id: number) {
     const items = await fetchProjectsFromDb();
     return items.find((project) => project.id === id) ?? null;
+}
+
+export async function getProjectBySlug(slug: string) {
+    const items = await fetchProjectsFromDb();
+    return items.find((project) => project.slug === slug) ?? null;
 }
 
 export function getProjectCategories() {
