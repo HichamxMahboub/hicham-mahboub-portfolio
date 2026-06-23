@@ -3,7 +3,7 @@ import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/siteConfig";
 
-const metadataBase = new URL(siteConfig.url);
+const metadataBase = new URL("https://www.hichammahboub.live");
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-geist-sans",

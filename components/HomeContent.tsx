@@ -47,8 +47,9 @@ export default function HomeContent({ featuredProjects, projectCount }: HomeCont
                 </p>
                 <div className="space-y-5">
                   <h1 className="max-w-4xl text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-7xl">
-                    {copy.title}
+                    Hicham Mahboub
                   </h1>
+                  <p className="max-w-3xl text-lg font-medium leading-7 text-slate-200 sm:text-xl">{copy.title}</p>
                   <p className="max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">{copy.description}</p>
                 </div>
               </div>
