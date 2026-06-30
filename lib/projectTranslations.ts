@@ -143,6 +143,23 @@ const summaries: Record<number, Record<Locale, Pick<ProjectItem, "title" | "shor
         "تصور لأداة إدارة لتتبع العملاء والمهام والفواتير والمواعيد النهائية وحالة المشروع في مساحة عمل واحدة.",
     },
   },
+  8: {
+    en: {
+      title: "Leadbot Command Center",
+      shortDescription:
+        "A FastAPI and Playwright command center for Google Maps lead scraping, live progress logs, and downloadable Excel/CSV exports.",
+    },
+    fr: {
+      title: "Leadbot Command Center",
+      shortDescription:
+        "Un centre de commande FastAPI et Playwright pour l'extraction de leads Google Maps, les journaux en direct et les exports Excel/CSV telechargeables.",
+    },
+    ar: {
+      title: "Leadbot Command Center",
+      shortDescription:
+        "مركز قيادة مبني بـ FastAPI وPlaywright لاستخراج العملاء المحتملين من Google Maps، مع سجلات مباشرة وتصدير Excel/CSV قابل للتنزيل.",
+    },
+  },
   6: {
     en: {
       title: "Nova AI Landing Page",

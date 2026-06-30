@@ -12,6 +12,7 @@ export const projectSlugsById: Record<number, string> = {
   5: "freelance-manager",
   6: "nova-ai-landing",
   7: "smartsim-analytics",
+  8: "leadbot-command-center",
 };
 
 export const projectCategories = [
@@ -397,6 +398,68 @@ export const projects: ProjectItem[] = [
       "Add tests for task, budget, and reporting logic",
     ],
     githubLink: "https://github.com/HichamxMahboub/freelance_manager",
+  },
+  {
+    id: 8,
+    title: "Leadbot Command Center",
+    slug: "leadbot-command-center",
+    shortDescription:
+      "A FastAPI and Playwright command center for Google Maps lead scraping, live progress logs, and downloadable Excel/CSV exports.",
+    category: "Digital Tools",
+    themeKey: "cyan",
+    bgColor: "bg-cyan-950",
+    imageAlt: "Leadbot Command Center web app for scraping business leads with live logs and export controls",
+    description:
+      "Leadbot Command Center is a Dockerized FastAPI and Playwright web app that runs Google Maps lead extraction workflows, streams progress through WebSockets, and exports results as Excel or CSV files.",
+    problem:
+      "Lead research is repetitive when business listings, locations, and contact details are collected manually. A small operator needs a focused tool that can start a search, show progress, and return usable spreadsheet exports.",
+    solution:
+      "I built the project around a FastAPI web service, a lightweight HTML interface, Playwright automation, WebSocket progress updates, and file export endpoints. The app is packaged with a Dockerfile so it can run on container-friendly hosting.",
+    result:
+      "The live Hugging Face Space demonstrates a deployable backend/web automation tool with a health endpoint, Docker runtime, browser automation dependencies, and a simple operator-facing command center.",
+    keyFeatures: [
+      "FastAPI web app with health endpoint",
+      "Playwright-powered Google Maps scraping workflow",
+      "Live progress updates through WebSockets",
+      "Excel and CSV result exports",
+      "Docker-based deployment",
+      "Public Hugging Face Space demo",
+    ],
+    technicalDecisions: [
+      "Used FastAPI for a small backend surface with explicit health, scrape, websocket, and download endpoints.",
+      "Packaged the app with a Playwright Python Docker image so browser automation dependencies are available in the runtime.",
+      "Stored generated result files in a runtime results directory and exposed download endpoints for reviewer-friendly exports.",
+    ],
+    validation: [
+      "Local Docker image build completed successfully",
+      "Local /health endpoint returned HTTP 200",
+      "Hugging Face Space reports the Docker runtime as running on CPU Basic hardware",
+    ],
+    learned:
+      "I learned how to package a browser-automation workflow as a deployable web service, including health checks, runtime port binding, and a lightweight command-center UI.",
+    techStack: [
+      "Python",
+      "FastAPI",
+      "Playwright",
+      "WebSockets",
+      "Docker",
+      "Pandas",
+      "OpenPyXL",
+      "Hugging Face Spaces",
+    ],
+    screenshots: [],
+    nextImprovements: [
+      "Add screenshots of the deployed command center",
+      "Add rate limiting and clearer usage boundaries",
+      "Persist exports to external storage for longer-running deployments",
+      "Add automated smoke tests for the health and root endpoints",
+    ],
+    statusItems: [
+      { label: "Live Demo", value: "Available" },
+      { label: "Hosting", value: "Hugging Face Spaces" },
+    ],
+    liveLink: "https://homemadesavior-leadbot-command-center.hf.space",
+    githubLink: "https://github.com/HichamxMahboub/leadbot-command-center",
   },
   {
     id: 6,
